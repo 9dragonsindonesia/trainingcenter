@@ -1,17 +1,17 @@
 // Data Training dengan gambar yang relevan
 const trainings = [
-  { id: 1, name: "Welder 3G (SMAW)", category: "welding", price: 3500000, duration: "5 Hari", cert: "BNSP", slug: "welder-3g-smaw", image: "https://images.unsplash.com/photo-1504917595217-d4dc5ebe6122?w=500&h=300&fit=crop" },
-  { id: 2, name: "Welder 4G (SMAW)", category: "welding", price: 3800000, duration: "5 Hari", cert: "BNSP", slug: "welder-4g-smaw", image: "https://images.unsplash.com/photo-1504917595217-d4dc5ebe6122?w=500&h=300&fit=crop" },
+  { id: 1, name: "Welder 3G (SMAW)", category: "welding", price: 3500000, duration: "5 Hari", cert: "BNSP", slug: "welder-3g-smaw", image: "https://images.unsplash.com/photo-1605256801695-5551e77183d9?w=500&h=300&fit=crop" },
+  { id: 2, name: "Welder 4G (SMAW)", category: "welding", price: 3800000, duration: "5 Hari", cert: "BNSP", slug: "welder-4g-smaw", image: "https://images.unsplash.com/photo-1731397979866-e6ed085d434b?w=500&h=300&fit=crop" },
   { id: 3, name: "Welder 6G (SMAW/GTAW)", category: "welding", price: 5500000, duration: "7 Hari", cert: "BNSP + Internasional", slug: "welder-6g-smaw-gtaw", image: "https://images.unsplash.com/photo-1504917595217-d4dc5ebe6122?w=500&h=300&fit=crop" },
-  { id: 4, name: "Welding Inspector (CSWIP)", category: "welding", price: 12500000, duration: "10 Hari", cert: "CSWIP", slug: "welding-inspector-cswip", image: "https://images.unsplash.com/photo-1581092335871-5c5f4e2b5a2b?w=500&h=300&fit=crop" },
-  { id: 5, name: "BOSIET (OPITO)", category: "offshore", price: 8500000, duration: "3 Hari", cert: "OPITO", slug: "bosit-opito", image: "https://images.unsplash.com/photo-1549128830-99c5d9be6ea5?w=500&h=300&fit=crop" },
-  { id: 6, name: "FOET (OPITO)", category: "offshore", price: 6500000, duration: "2 Hari", cert: "OPITO", slug: "foet-opito", image: "https://images.unsplash.com/photo-1549128830-99c5d9be6ea5?w=500&h=300&fit=crop" },
+  { id: 4, name: "Welding Inspector (CSWIP)", category: "welding", price: 12500000, duration: "10 Hari", cert: "CSWIP", slug: "welding-inspector-cswip", image: "https://images.unsplash.com/photo-1774680395523-15ecad3a78ae?w=500&h=300&fit=crop" },
+  { id: 5, name: "BOSIET (OPITO)", category: "offshore", price: 8500000, duration: "3 Hari", cert: "OPITO", slug: "bosit-opito", image: "https://images.unsplash.com/photo-1774681075003-6a350330ff30?w=500&h=300&fit=crop" },
+  { id: 6, name: "FOET (OPITO)", category: "offshore", price: 6500000, duration: "2 Hari", cert: "OPITO", slug: "foet-opito", image: "https://images.unsplash.com/photo-1632914146475-bfe6fa6b2a12?w=500&h=300&fit=crop" },
   { id: 7, name: "H2S & BA", category: "offshore", price: 3200000, duration: "1 Hari", cert: "Internasional", slug: "h2s-ba", image: "https://images.unsplash.com/photo-1582139323114-bfc5c7b2a2a1?w=500&h=300&fit=crop" },
   { id: 8, name: "Project Management Professional", category: "management", price: 7500000, duration: "5 Hari", cert: "PMP Based", slug: "project-management-pmp", image: "https://images.unsplash.com/photo-1557804506-669a67965ba0?w=500&h=300&fit=crop" },
   { id: 9, name: "Autocad 2D & 3D", category: "engineering", price: 2800000, duration: "4 Hari", cert: "Sertifikat", slug: "autocad-2d-3d", image: "https://images.unsplash.com/photo-1581091226033-d5c48150dbaa?w=500&h=300&fit=crop" },
-  { id: 10, name: "Pipe Fitter", category: "engineering", price: 4200000, duration: "6 Hari", cert: "BNSP", slug: "pipe-fitter", image: "https://images.unsplash.com/photo-1581092335871-5c5f4e2b5a2b?w=500&h=300&fit=crop" },
-  { id: 11, name: "Crane Operator", category: "heavy", price: 4800000, duration: "5 Hari", cert: "Kemenaker", slug: "crane-operator", image: "https://images.unsplash.com/photo-1574781339824-9b0b2b2b5b5b?w=500&h=300&fit=crop" },
-  { id: 12, name: "Forklift Operator", category: "heavy", price: 3500000, duration: "4 Hari", cert: "Kemenaker", slug: "forklift-operator", image: "https://images.unsplash.com/photo-1574781339824-9b0b2b2b5b5b?w=500&h=300&fit=crop" },
+  { id: 10, name: "Pipe Fitter", category: "engineering", price: 4200000, duration: "6 Hari", cert: "BNSP", slug: "pipe-fitter", image: "https://images.unsplash.com/photo-1582441814869-a262426017f9?w=500&h=300&fit=crop" },
+  { id: 11, name: "Crane Operator", category: "heavy", price: 4800000, duration: "5 Hari", cert: "Kemenaker", slug: "crane-operator", image: "https://images.unsplash.com/photo-1772338542560-7c8423fd21e5?w=500&h=300&fit=crop" },
+  { id: 12, name: "Forklift Operator", category: "heavy", price: 3500000, duration: "4 Hari", cert: "Kemenaker", slug: "forklift-operator", image: "https://images.unsplash.com/photo-1687203920859-c87cb0955630?w=500&h=300&fit=crop" },
   { id: 13, name: "Scaffolding Erector", category: "engineering", price: 3900000, duration: "4 Hari", cert: "BNSP", slug: "scaffolding-erector", image: "https://images.unsplash.com/photo-1541888946425-d81bb19240f5?w=500&h=300&fit=crop" },
   { id: 14, name: "Rigging & Slinging", category: "heavy", price: 3200000, duration: "3 Hari", cert: "BNSP", slug: "rigging-slinging", image: "https://images.unsplash.com/photo-1574781339824-9b0b2b2b5b5b?w=500&h=300&fit=crop" },
   { id: 15, name: "Safety Officer (AK3 Umum)", category: "management", price: 5500000, duration: "8 Hari", cert: "Kemnaker", slug: "safety-officer-ak3", image: "https://images.unsplash.com/photo-1557804506-669a67965ba0?w=500&h=300&fit=crop" },
@@ -184,13 +184,13 @@ function initCartModal() {
         alert('Keranjang masih kosong');
         return;
       }
-      let msg = "Halo Training Center,%0A%0ASaya ingin mendaftar program berikut:%0A%0A";
+      let msg = "Halo Training Center,\n\nSaya ingin mendaftar program berikut:\n\n";
       cart.forEach(item => {
-        msg += `📌 ${item.name} - ${item.quantity} x Rp ${item.price.toLocaleString()}%0A`;
+        msg += `${item.name} - ${item.quantity} x Rp ${item.price.toLocaleString()}\n`;
       });
       const total = cart.reduce((sum, i) => sum + (i.price * i.quantity), 0);
-      msg += `%0A*Total: Rp ${total.toLocaleString()}*%0A%0ATolong informasikan jadwal dan prosedur pembayaran.`;
-      window.open(`https://wa.me/6281234567890?text=${encodeURIComponent(msg)}`, '_blank');
+      msg += `\n*Total: Rp ${total.toLocaleString()}*\n\nTolong informasikan jadwal dan prosedur pembayaran.`;
+      window.open(`https://wa.me/6285260839456?text=${encodeURIComponent(msg)}`, '_blank');
       cartModal.classList.remove('show');
     });
   }
