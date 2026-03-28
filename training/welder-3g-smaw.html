@@ -1,1 +1,152 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Welder 3G (SMAW) | Training Center</title>
+  <link rel="stylesheet" href="../css/style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+</head>
+<body>
 
+<nav class="navbar">
+  <div class="container nav-container">
+    <div class="logo" onclick="location.href='../index.html'">TRAINING<span>CENTER</span></div>
+    <div class="nav-links">
+      <a href="../index.html">Beranda</a>
+      <a href="../index.html#training">Program</a>
+      <a href="../index.html#about">Tentang</a>
+      <a href="../index.html#contact">Kontak</a>
+      <div class="cart-icon" id="cartIcon">
+        <i class="fas fa-shopping-cart"></i>
+        <span class="cart-count" id="cartCount">0</span>
+      </div>
+    </div>
+  </div>
+</nav>
+
+<main>
+  <div class="detail-page">
+    <div class="container">
+      <button class="back-button" onclick="location.href='../index.html#training'">
+        <i class="fas fa-arrow-left"></i> Kembali ke Program
+      </button>
+      
+      <div class="detail-container" data-aos="fade-up">
+        <div class="detail-header">
+          <h1>Welder 3G (SMAW)</h1>
+          <div class="detail-meta">
+            <span><i class="fas fa-tag"></i> WELDING</span>
+            <span><i class="fas fa-certificate"></i> BNSP</span>
+            <span><i class="far fa-calendar-alt"></i> 5 Hari</span>
+          </div>
+        </div>
+        
+        <div class="detail-section">
+          <h3><i class="fas fa-clipboard-list"></i> Syarat Mengikuti Training</h3>
+          <ul class="requirement-list">
+            <li>Fotocopy KTP (3 lembar)</li>
+            <li>Fotocopy Ijazah minimal SMA/SMK (3 lembar)</li>
+            <li>Pas foto 3x4 (4 lembar)</li>
+            <li>Surat keterangan sehat dari dokter</li>
+            <li>Menguasai dasar pengelasan</li>
+          </ul>
+        </div>
+        
+        <div class="detail-section">
+          <h3><i class="fas fa-book-open"></i> Materi yang Diajarkan</h3>
+          <ul class="material-list">
+            <li>Teknik pengelasan posisi datar</li>
+            <li>Teknik pengelasan posisi horizontal</li>
+            <li>Teknik pengelasan posisi vertikal (3G)</li>
+            <li>Penggunaan elektroda E7016</li>
+            <li>Keselamatan kerja pengelasan</li>
+            <li>Praktik langsung dengan instruktur bersertifikasi</li>
+          </ul>
+        </div>
+        
+        <div class="detail-section">
+          <h3><i class="fas fa-gift"></i> Fasilitas yang Didapatkan</h3>
+          <ul class="facility-list">
+            <li>Sertifikat BNSP</li>
+            <li>Modul pelatihan</li>
+            <li>Alat las dan APD lengkap</li>
+            <li>Makan siang & coffee break</li>
+            <li>Ruang praktik ber-AC</li>
+            <li>Asuransi kecelakaan</li>
+          </ul>
+        </div>
+        
+        <div class="detail-section">
+          <h3><i class="fas fa-bullseye"></i> Tujuan & Harapan Setelah Training</h3>
+          <ul class="objective-list">
+            <li>Menguasai teknik pengelasan posisi 3G (vertikal)</li>
+            <li>Mendapatkan sertifikasi BNSP yang diakui industri</li>
+            <li>Siap bekerja sebagai welder di proyek konstruksi dan manufaktur</li>
+            <li>Memahami standar keselamatan kerja pengelasan</li>
+            <li>Meningkatkan nilai jual di pasar tenaga kerja</li>
+          </ul>
+        </div>
+        
+        <div class="price-box">
+          <div>
+            <span style="color: var(--gray);">Investasi Training</span>
+            <div class="price">Rp 3.500.000</div>
+          </div>
+          <div style="display: flex; gap: 15px; flex-wrap: wrap;">
+            <button class="register-btn" id="addToCartBtn">+ Tambah ke Keranjang</button>
+            <button class="register-btn" style="background: var(--black); color: white;" id="buyNowBtn">Beli Sekarang</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</main>
+
+<footer>
+  <div class="container footer-grid">
+    <div><h3>TRAINING CENTER</h3><p>Membangun kompetensi tenaga profesional Indonesia.</p></div>
+    <div><h4>Program Populer</h4><p>Welder 6G</p><p>BOSIET</p><p>Project Management</p><p>Autocad</p></div>
+    <div><h4>Kontak</h4><p>info@trainingcenter.id</p><p>+62 21 1234 5678</p></div>
+  </div>
+  <div class="footer-bottom">
+    <p>&copy; 2025 Training Center - All Rights Reserved</p>
+  </div>
+</footer>
+
+<!-- Cart Modal -->
+<div id="cartModal" class="cart-modal">
+  <div class="cart-content">
+    <h3>Keranjang Belanja</h3>
+    <div id="cartItems"></div>
+    <div id="cartTotal" class="cart-total"></div>
+    <button id="checkoutWA" class="checkout-wa"><i class="fab fa-whatsapp"></i> Checkout via WhatsApp</button>
+    <button id="closeCart" class="close-cart">Tutup</button>
+  </div>
+</div>
+
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+<script src="../js/main.js"></script>
+<script>
+  AOS.init({ once: true, duration: 800 });
+  
+  // Data untuk training ini
+  const trainingData = {
+    id: 1,
+    name: "Welder 3G (SMAW)",
+    price: 3500000
+  };
+  
+  document.getElementById('addToCartBtn').addEventListener('click', () => {
+    addToCart(trainingData.id, trainingData.name, trainingData.price);
+  });
+  
+  document.getElementById('buyNowBtn').addEventListener('click', () => {
+    addToCart(trainingData.id, trainingData.name, trainingData.price);
+    document.getElementById('cartIcon').click();
+  });
+</script>
+</body>
+</html>
