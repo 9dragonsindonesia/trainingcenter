@@ -4,24 +4,67 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Training Center | Sertifikasi Industri & Offshore</title>
-  <link rel="stylesheet" href="css/style.css">
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <!-- Tailwind CSS + Font Awesome -->
+  <script src="https://cdn.tailwindcss.com"></script>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+  <!-- Custom CSS Override -->
+  <style>
+    * {
+      scroll-behavior: smooth;
+    }
+    .gradient-bg {
+      background: linear-gradient(135deg, #F7F7F7 0%, #FFF8F0 100%);
+    }
+    .hero-gradient {
+      background: linear-gradient(rgba(0,0,0,0.75), rgba(0,0,0,0.65)), url('https://images.unsplash.com/photo-1581091226033-d5c48150dbaa?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80');
+      background-size: cover;
+      background-position: center;
+    }
+    .card-hover {
+      transition: all 0.3s ease;
+    }
+    .card-hover:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 20px 35px -10px rgba(0,0,0,0.15);
+    }
+    .filter-btn.active {
+      background: #FFB22C;
+      color: #000000;
+      border-color: #FFB22C;
+    }
+    .cart-modal {
+      display: none;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0,0,0,0.7);
+      z-index: 2000;
+      justify-content: center;
+      align-items: center;
+    }
+    .cart-modal.show {
+      display: flex;
+    }
+  </style>
 </head>
-<body>
+<body class="bg-[#F7F7F7] font-sans">
 
-<nav class="navbar">
-  <div class="container nav-container">
-    <div class="logo" onclick="location.href='index.html'">TRAINING<span>CENTER</span></div>
-    <div class="nav-links">
-      <a href="index.html">Beranda</a>
-      <a href="index.html#training">Program</a>
-      <a href="index.html#about">Tentang</a>
-      <a href="index.html#contact">Kontak</a>
-      <div class="cart-icon" id="cartIcon">
-        <i class="fas fa-shopping-cart"></i>
-        <span class="cart-count" id="cartCount">0</span>
+<!-- Navbar -->
+<nav class="bg-black sticky top-0 z-50 border-b-4 border-[#FFB22C]">
+  <div class="container mx-auto px-4 md:px-8 py-4 flex justify-between items-center flex-wrap gap-4">
+    <div class="text-2xl font-extrabold text-[#FFB22C] cursor-pointer" onclick="location.href='index.html'">
+      TRAINING<span class="text-[#F7F7F7]">CENTER</span>
+    </div>
+    <div class="flex items-center gap-6 flex-wrap">
+      <a href="index.html" class="text-[#F7F7F7] hover:text-[#FFB22C] transition font-medium">Beranda</a>
+      <a href="#training" class="text-[#F7F7F7] hover:text-[#FFB22C] transition font-medium">Program</a>
+      <a href="#about" class="text-[#F7F7F7] hover:text-[#FFB22C] transition font-medium">Tentang</a>
+      <a href="#contact" class="text-[#F7F7F7] hover:text-[#FFB22C] transition font-medium">Kontak</a>
+      <div class="cart-icon relative cursor-pointer" id="cartIcon">
+        <i class="fas fa-shopping-cart text-2xl text-[#FFB22C]"></i>
+        <span class="absolute -top-2 -right-3 bg-[#FFB22C] text-black text-xs font-bold rounded-full px-2 py-0.5" id="cartCount">0</span>
       </div>
     </div>
   </div>
@@ -29,98 +72,102 @@
 
 <main>
   <!-- Hero Section -->
-  <section class="hero" id="home">
-    <div class="container hero-content">
-      <h1 data-aos="fade-up">Sertifikasi Profesional<br>Untuk Karir Industri</h1>
-      <p data-aos="fade-up" data-aos-delay="200">Pelatihan bersertifikasi untuk offshore, welding, konstruksi, dan manajemen proyek. Diakui nasional & internasional.</p>
-      <a href="#training" class="btn-primary" data-aos="fade-up" data-aos-delay="400">Lihat Program</a>
+  <section class="hero-gradient min-h-[70vh] flex items-center">
+    <div class="container mx-auto px-4 md:px-8 text-center md:text-left">
+      <h1 class="text-4xl md:text-6xl font-extrabold text-[#FFB22C] mb-4" data-aos="fade-up">Sertifikasi Profesional<br>Untuk Karir Industri</h1>
+      <p class="text-lg md:text-xl text-white mb-8 max-w-2xl mx-auto md:mx-0" data-aos="fade-up" data-aos-delay="200">Pelatihan bersertifikasi untuk offshore, welding, konstruksi, dan manajemen proyek. Diakui nasional & internasional.</p>
+      <a href="#training" class="inline-block bg-[#FFB22C] text-black font-bold px-8 py-3 rounded-full hover:bg-[#854836] hover:text-white transition transform hover:-translate-y-1" data-aos="fade-up" data-aos-delay="400">
+        Lihat Program
+      </a>
     </div>
   </section>
 
-  <!-- Filter & Training Section -->
-  <section class="section" id="training">
-    <div class="container">
-      <h2 class="section-title" data-aos="fade-up">Program Pelatihan</h2>
-      <p class="section-sub" data-aos="fade-up">Pilih program sesuai kebutuhan karir Anda. Semua pelatihan bersertifikat resmi.</p>
+  <!-- Training Section -->
+  <section id="training" class="py-20">
+    <div class="container mx-auto px-4 md:px-8">
+      <h2 class="text-3xl md:text-4xl font-bold text-center mb-3">Program Pelatihan</h2>
+      <div class="w-20 h-1 bg-[#FFB22C] mx-auto mb-4"></div>
+      <p class="text-center text-gray-600 max-w-2xl mx-auto mb-10">Pilih program sesuai kebutuhan karir Anda. Semua pelatihan bersertifikat resmi.</p>
       
-      <div class="filter-bar" data-aos="fade-up">
-        <button class="filter-btn active" data-filter="all">Semua</button>
-        <button class="filter-btn" data-filter="welding">Welding</button>
-        <button class="filter-btn" data-filter="offshore">Offshore</button>
-        <button class="filter-btn" data-filter="management">Management</button>
-        <button class="filter-btn" data-filter="engineering">Engineering</button>
-        <button class="filter-btn" data-filter="heavy">Alat Berat</button>
-        <input type="text" class="search-box" id="searchInput" placeholder="Cari training...">
+      <!-- Filter & Search -->
+      <div class="flex flex-wrap justify-center gap-3 mb-10">
+        <button class="filter-btn px-5 py-2 rounded-full border border-gray-300 bg-white hover:bg-[#FFB22C] transition font-medium" data-filter="all">Semua</button>
+        <button class="filter-btn px-5 py-2 rounded-full border border-gray-300 bg-white hover:bg-[#FFB22C] transition font-medium" data-filter="welding">Welding</button>
+        <button class="filter-btn px-5 py-2 rounded-full border border-gray-300 bg-white hover:bg-[#FFB22C] transition font-medium" data-filter="offshore">Offshore</button>
+        <button class="filter-btn px-5 py-2 rounded-full border border-gray-300 bg-white hover:bg-[#FFB22C] transition font-medium" data-filter="management">Management</button>
+        <button class="filter-btn px-5 py-2 rounded-full border border-gray-300 bg-white hover:bg-[#FFB22C] transition font-medium" data-filter="engineering">Engineering</button>
+        <button class="filter-btn px-5 py-2 rounded-full border border-gray-300 bg-white hover:bg-[#FFB22C] transition font-medium" data-filter="heavy">Alat Berat</button>
+        <input type="text" id="searchInput" placeholder="Cari training..." class="px-5 py-2 rounded-full border border-gray-300 w-64 focus:outline-none focus:border-[#FFB22C]">
       </div>
       
-      <div class="training-grid" id="trainingGrid"></div>
+      <!-- Training Grid -->
+      <div id="trainingGrid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"></div>
     </div>
   </section>
 
   <!-- About Section -->
-  <section class="section" id="about">
-    <div class="container">
-      <div class="about-wrapper">
-        <div class="about-text" data-aos="fade-right">
-          <h2>Tentang Kami</h2>
-          <p>Lembaga pelatihan industri terakreditasi dengan pengalaman lebih dari 15 tahun. Kami telah melatih ribuan tenaga profesional yang bekerja di perusahaan migas, konstruksi, dan manufaktur.</p>
-          <p>Instruktur bersertifikasi, fasilitas modern, dan kurikulum yang selalu diperbarui sesuai standar industri.</p>
-          <div class="about-stats">
-            <div><i class="fas fa-certificate"></i> BNSP Terakreditasi</div>
-            <div><i class="fas fa-users"></i> 5000+ Alumni</div>
+  <section id="about" class="py-20 bg-white">
+    <div class="container mx-auto px-4 md:px-8">
+      <div class="flex flex-col md:flex-row items-center gap-12">
+        <div class="md:w-1/2" data-aos="fade-right">
+          <h2 class="text-3xl md:text-4xl font-bold mb-4">Tentang Kami</h2>
+          <div class="w-20 h-1 bg-[#FFB22C] mb-6"></div>
+          <p class="text-gray-600 mb-4">Lembaga pelatihan industri terakreditasi dengan pengalaman lebih dari 15 tahun. Kami telah melatih ribuan tenaga profesional yang bekerja di perusahaan migas, konstruksi, dan manufaktur.</p>
+          <p class="text-gray-600 mb-6">Instruktur bersertifikasi, fasilitas modern, dan kurikulum yang selalu diperbarui sesuai standar industri.</p>
+          <div class="flex gap-6">
+            <div class="flex items-center gap-2"><i class="fas fa-certificate text-[#FFB22C]"></i> BNSP Terakreditasi</div>
+            <div class="flex items-center gap-2"><i class="fas fa-users text-[#FFB22C]"></i> 5000+ Alumni</div>
           </div>
         </div>
-        <div class="about-image" data-aos="fade-left">
-          <img src="https://cdn-icons-png.flaticon.com/512/4210/4210455.png" alt="Training">
+        <div class="md:w-1/2" data-aos="fade-left">
+          <img src="https://cdn-icons-png.flaticon.com/512/4210/4210455.png" alt="Training" class="mx-auto w-80">
         </div>
       </div>
     </div>
   </section>
 
   <!-- Contact Section -->
-  <section class="section" id="contact">
-    <div class="container">
-      <div class="contact-card">
-        <h2>Hubungi Kami</h2>
-        <div class="contact-wrapper">
-          <div class="contact-info">
-            <p><i class="fas fa-map-marker-alt"></i> Jl. Industri Raya No. 45, Jakarta Timur</p>
-            <p><i class="fas fa-phone"></i> +62 21 1234 5678</p>
-            <p><i class="fas fa-envelope"></i> info@trainingcenter.id</p>
-          </div>
-          <div class="contact-info">
-            <p><i class="fab fa-whatsapp"></i> +62 812 3456 7890 (Konsultasi)</p>
-            <p><i class="far fa-clock"></i> Senin - Jumat: 08:00 - 17:00</p>
-          </div>
+  <section id="contact" class="py-20">
+    <div class="container mx-auto px-4 md:px-8">
+      <div class="bg-white rounded-3xl p-8 md:p-12 shadow-lg">
+        <h2 class="text-3xl font-bold text-center mb-8">Hubungi Kami</h2>
+        <div class="flex flex-col md:flex-row justify-center gap-8 md:gap-16">
+          <div><i class="fas fa-map-marker-alt text-[#FFB22C] w-6"></i> Jl. Industri Raya No. 45, Jakarta Timur</div>
+          <div><i class="fas fa-phone text-[#FFB22C] w-6"></i> +62 21 1234 5678</div>
+          <div><i class="fas fa-envelope text-[#FFB22C] w-6"></i> info@trainingcenter.id</div>
+          <div><i class="fab fa-whatsapp text-green-500 w-6"></i> +62 812 3456 7890</div>
         </div>
       </div>
     </div>
   </section>
 </main>
 
-<footer>
-  <div class="container footer-grid">
-    <div><h3>TRAINING CENTER</h3><p>Membangun kompetensi tenaga profesional Indonesia.</p></div>
-    <div><h4>Program Populer</h4><p>Welder 6G</p><p>BOSIET</p><p>Project Management</p><p>Autocad</p></div>
-    <div><h4>Kontak</h4><p>info@trainingcenter.id</p><p>+62 21 1234 5678</p></div>
-  </div>
-  <div class="footer-bottom">
-    <p>&copy; 2025 Training Center - All Rights Reserved</p>
+<footer class="bg-black text-[#F7F7F7] py-12">
+  <div class="container mx-auto px-4 md:px-8">
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+      <div><h3 class="text-[#FFB22C] text-xl font-bold mb-3">TRAINING CENTER</h3><p class="text-gray-400">Membangun kompetensi tenaga profesional Indonesia.</p></div>
+      <div><h4 class="font-semibold mb-3">Program Populer</h4><p class="text-gray-400">Welder 6G</p><p class="text-gray-400">BOSIET</p><p class="text-gray-400">Project Management</p></div>
+      <div><h4 class="font-semibold mb-3">Kontak</h4><p class="text-gray-400">info@trainingcenter.id</p><p class="text-gray-400">+62 21 1234 5678</p></div>
+    </div>
+    <div class="border-t border-gray-800 mt-8 pt-6 text-center text-gray-500 text-sm">&copy; 2025 Training Center - All Rights Reserved</div>
   </div>
 </footer>
 
 <!-- Cart Modal -->
 <div id="cartModal" class="cart-modal">
-  <div class="cart-content">
-    <h3>Keranjang Belanja</h3>
+  <div class="bg-white rounded-2xl w-full max-w-md p-6 mx-4 max-h-[80vh] overflow-auto">
+    <h3 class="text-xl font-bold mb-4">Keranjang Belanja</h3>
     <div id="cartItems"></div>
-    <div id="cartTotal" class="cart-total"></div>
-    <button id="checkoutWA" class="checkout-wa"><i class="fab fa-whatsapp"></i> Checkout via WhatsApp</button>
-    <button id="closeCart" class="close-cart">Tutup</button>
+    <div id="cartTotal" class="text-right font-bold text-lg my-4"></div>
+    <button id="checkoutWA" class="w-full bg-green-500 text-white font-bold py-3 rounded-full hover:bg-green-600 transition"><i class="fab fa-whatsapp mr-2"></i> Checkout via WhatsApp</button>
+    <button id="closeCart" class="w-full mt-3 text-gray-500 py-2 hover:text-gray-700 transition">Tutup</button>
   </div>
 </div>
 
 <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+<script>
+  AOS.init({ once: true, duration: 800 });
+</script>
 <script src="js/main.js"></script>
 </body>
 </html>
