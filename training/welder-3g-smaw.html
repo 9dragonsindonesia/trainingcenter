@@ -29,8 +29,14 @@
       transition: all 0.3s ease;
     }
     .desc-card:hover {
-      transform: translateY(-4px);
-      box-shadow: 0 10px 25px -5px rgba(0,0,0,0.1);
+      transform: translateX(4px);
+    }
+    .cta-sticky {
+      transition: all 0.3s ease;
+    }
+    .cta-sticky:hover {
+      transform: scale(1.02);
+      box-shadow: 0 20px 35px -10px rgba(255,178,44,0.4);
     }
   </style>
 </head>
@@ -62,201 +68,228 @@
       <i class="fas fa-arrow-left"></i> Kembali ke Program
     </button>
     
-    <!-- Detail Content - Grid Layout 2 Kolom -->
+    <!-- Detail Content - Grid Layout 2 Kolom dengan Deskripsi di Kiri -->
     <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
-      <!-- Left Column: Image & Info -->
-      <div class="sticky top-24">
-        <img src="https://images.unsplash.com/photo-1504917595217-d4dc5ebe6122?w=800&h=500&fit=crop" alt="Welder 3G" class="w-full rounded-2xl shadow-lg object-cover h-80 lg:h-96">
-        <div class="mt-6 bg-white rounded-2xl p-6 shadow-md">
-          <div class="flex items-center gap-4 flex-wrap mb-4">
-            <span class="bg-[#FFB22C] text-black px-4 py-1 rounded-full text-sm font-semibold">WELDING</span>
-            <span class="bg-gray-100 text-gray-700 px-4 py-1 rounded-full text-sm"><i class="fas fa-certificate mr-1"></i> BNSP</span>
-            <span class="bg-gray-100 text-gray-700 px-4 py-1 rounded-full text-sm"><i class="far fa-calendar-alt mr-1"></i> 5 Hari</span>
+      
+      <!-- LEFT COLUMN: Deskripsi 5W1H -->
+      <div class="space-y-6">
+        <!-- Header Deskripsi -->
+        <div class="bg-gradient-to-r from-[#FFB22C]/20 to-white rounded-2xl p-6 shadow-md border-l-4 border-[#FFB22C]">
+          <h2 class="text-2xl font-bold text-[#854836] mb-2">📋 Memahami Welder 3G (SMAW)</h2>
+          <p class="text-gray-600">Panduan lengkap tentang sertifikasi pengelasan posisi vertikal</p>
+        </div>
+        
+        <!-- 5W1H Cards -->
+        
+        <!-- 1. WHAT (Apa) -->
+        <div class="desc-card bg-white rounded-2xl p-6 shadow-md hover:shadow-lg transition">
+          <div class="flex items-start gap-4">
+            <div class="bg-[#FFB22C]/20 p-3 rounded-xl">
+              <i class="fas fa-question-circle text-2xl text-[#FFB22C]"></i>
+            </div>
+            <div>
+              <h3 class="text-xl font-bold text-[#854836] mb-2">📌 WHAT - Apa itu Welder 3G (SMAW)?</h3>
+              <p class="text-gray-600 leading-relaxed">Welder 3G adalah sertifikasi kompetensi pengelasan dengan posisi <strong class="text-[#854836]">vertikal (vertical groove weld)</strong> menggunakan metode <strong class="text-[#854836]">SMAW (Shielded Metal Arc Welding)</strong> atau las listrik. Angka "3" menunjukkan posisi pengelasan vertikal, sementara "G" menunjukkan jenis sambungan alur (groove weld). Posisi ini mengharuskan tukang las untuk mengelas pada permukaan vertikal dengan gerakan dari bawah ke atas atau sebaliknya, yang membutuhkan keterampilan dan kontrol busur las yang sangat baik.</p>
+              <p class="text-gray-600 mt-3">Sertifikasi ini merupakan standar kompetensi yang diakui secara nasional oleh BNSP dan menjadi syarat utama bagi welder yang ingin bekerja di proyek-proyek konstruksi dan industri berat.</p>
+            </div>
           </div>
-          <div class="text-3xl font-bold text-[#FFB22C] mb-4">Rp 3.500.000</div>
-          <div class="flex gap-4">
-            <button id="addToCartBtn" class="flex-1 bg-black text-white font-bold py-3 rounded-full hover:bg-[#FFB22C] hover:text-black transition">+ Tambah ke Keranjang</button>
-            <button id="buyNowBtn" class="flex-1 bg-[#FFB22C] text-black font-bold py-3 rounded-full hover:bg-[#854836] hover:text-white transition">Beli Sekarang</button>
+        </div>
+        
+        <!-- 2. WHY (Kenapa) -->
+        <div class="desc-card bg-white rounded-2xl p-6 shadow-md hover:shadow-lg transition">
+          <div class="flex items-start gap-4">
+            <div class="bg-[#FFB22C]/20 p-3 rounded-xl">
+              <i class="fas fa-question-circle text-2xl text-[#FFB22C]"></i>
+            </div>
+            <div>
+              <h3 class="text-xl font-bold text-[#854836] mb-2">🎯 WHY - Kenapa Welder 3G Sangat Diperlukan?</h3>
+              <ul class="space-y-3 text-gray-600">
+                <li class="flex items-start gap-2"><i class="fas fa-check-circle text-[#FFB22C] mt-1"></i> <strong>Standar Keselamatan & Kualitas:</strong> Menjamin hasil lasan memenuhi standar keamanan struktural untuk bangunan dan infrastruktur</li>
+                <li class="flex items-start gap-2"><i class="fas fa-check-circle text-[#FFB22C] mt-1"></i> <strong>Persyaratan Wajib Proyek:</strong> Mayoritas proyek konstruksi, migas, dan manufaktur mensyaratkan welder bersertifikasi 3G</li>
+                <li class="flex items-start gap-2"><i class="fas fa-check-circle text-[#FFB22C] mt-1"></i> <strong>Nilai Ekonomi Lebih Tinggi:</strong> Welder bersertifikasi 3G memiliki tarif upah 30-50% lebih tinggi dibanding welder non-sertifikasi</li>
+                <li class="flex items-start gap-2"><i class="fas fa-check-circle text-[#FFB22C] mt-1"></i> <strong>Pengakuan Nasional & Internasional:</strong> Sertifikat BNSP diakui di seluruh Indonesia dan banyak perusahaan multinasional</li>
+                <li class="flex items-start gap-2"><i class="fas fa-check-circle text-[#FFB22C] mt-1"></i> <strong>Legalitas Tenaga Kerja:</strong> Memenuhi regulasi ketenagakerjaan untuk pekerjaan las struktural</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        
+        <!-- 3. WHO (Siapa) -->
+        <div class="desc-card bg-white rounded-2xl p-6 shadow-md hover:shadow-lg transition">
+          <div class="flex items-start gap-4">
+            <div class="bg-[#FFB22C]/20 p-3 rounded-xl">
+              <i class="fas fa-question-circle text-2xl text-[#FFB22C]"></i>
+            </div>
+            <div>
+              <h3 class="text-xl font-bold text-[#854836] mb-2">👥 WHO - Siapa yang Membutuhkan Sertifikasi Ini?</h3>
+              <div class="grid grid-cols-1 gap-2 mt-2">
+                <div class="flex items-center gap-2 p-2 bg-gray-50 rounded-xl"><i class="fas fa-user-check text-[#FFB22C] w-6"></i> <strong>Tukang Las Profesional</strong> - untuk meningkatkan kualifikasi dan nilai jual</div>
+                <div class="flex items-center gap-2 p-2 bg-gray-50 rounded-xl"><i class="fas fa-building text-[#FFB22C] w-6"></i> <strong>Perusahaan Kontraktor</strong> - untuk memenuhi persyaratan tender proyek</div>
+                <div class="flex items-center gap-2 p-2 bg-gray-50 rounded-xl"><i class="fas fa-hard-hat text-[#FFB22C] w-6"></i> <strong>Industri Manufaktur</strong> - yang memproduksi komponen dengan sambungan vertikal</div>
+                <div class="flex items-center gap-2 p-2 bg-gray-50 rounded-xl"><i class="fas fa-ship text-[#FFB22C] w-6"></i> <strong>Galangan Kapal</strong> - untuk pengerjaan konstruksi dan perbaikan kapal</div>
+                <div class="flex items-center gap-2 p-2 bg-gray-50 rounded-xl"><i class="fas fa-oil-can text-[#FFB22C] w-6"></i> <strong>Perusahaan Migas & Petrokimia</strong> - untuk fabrikasi peralatan vertikal</div>
+                <div class="flex items-center gap-2 p-2 bg-gray-50 rounded-xl"><i class="fas fa-graduation-cap text-[#FFB22C] w-6"></i> <strong>Lulusan SMK/SMA</strong> - yang ingin memulai karir di bidang pengelasan</div>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <!-- 4. WHEN (Kapan) -->
+        <div class="desc-card bg-white rounded-2xl p-6 shadow-md hover:shadow-lg transition">
+          <div class="flex items-start gap-4">
+            <div class="bg-[#FFB22C]/20 p-3 rounded-xl">
+              <i class="fas fa-question-circle text-2xl text-[#FFB22C]"></i>
+            </div>
+            <div>
+              <h3 class="text-xl font-bold text-[#854836] mb-2">⏰ WHEN - Kapan Sertifikasi Welder 3G Dibutuhkan?</h3>
+              <div class="grid grid-cols-1 md:grid-cols-2 gap-2 mt-2">
+                <div class="flex items-center gap-2"><i class="fas fa-check-circle text-[#FFB22C]"></i> Pengerjaan konstruksi gedung bertingkat</div>
+                <div class="flex items-center gap-2"><i class="fas fa-check-circle text-[#FFB22C]"></i> Pembuatan tangki vertikal & silinder industri</div>
+                <div class="flex items-center gap-2"><i class="fas fa-check-circle text-[#FFB22C]"></i> Fabrikasi struktur baja vertikal untuk jembatan</div>
+                <div class="flex items-center gap-2"><i class="fas fa-check-circle text-[#FFB22C]"></i> Pengerjaan lambung kapal bagian vertikal</div>
+                <div class="flex items-center gap-2"><i class="fas fa-check-circle text-[#FFB22C]"></i> Proyek yang mensyaratkan sertifikasi welder</div>
+                <div class="flex items-center gap-2"><i class="fas fa-check-circle text-[#FFB22C]"></i> Sebelum memulai pekerjaan di proyek besar</div>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <!-- 5. WHERE (Dimana) -->
+        <div class="desc-card bg-white rounded-2xl p-6 shadow-md hover:shadow-lg transition">
+          <div class="flex items-start gap-4">
+            <div class="bg-[#FFB22C]/20 p-3 rounded-xl">
+              <i class="fas fa-question-circle text-2xl text-[#FFB22C]"></i>
+            </div>
+            <div>
+              <h3 class="text-xl font-bold text-[#854836] mb-2">📍 WHERE - Dimana Welder 3G Dibutuhkan?</h3>
+              <div class="grid grid-cols-2 gap-2 mt-2">
+                <div class="bg-gray-50 p-2 rounded-xl text-center text-sm">🏗️ Proyek Konstruksi Gedung</div>
+                <div class="bg-gray-50 p-2 rounded-xl text-center text-sm">🏭 Pabrik & Manufaktur</div>
+                <div class="bg-gray-50 p-2 rounded-xl text-center text-sm">🌉 Konstruksi Jembatan & Flyover</div>
+                <div class="bg-gray-50 p-2 rounded-xl text-center text-sm">🛢️ Kilang Minyak & Gas</div>
+                <div class="bg-gray-50 p-2 rounded-xl text-center text-sm">🚢 Galangan Kapal & Dok</div>
+                <div class="bg-gray-50 p-2 rounded-xl text-center text-sm">⚡ Pembangkit Listrik</div>
+                <div class="bg-gray-50 p-2 rounded-xl text-center text-sm">🚆 Industri Perkeretaapian</div>
+                <div class="bg-gray-50 p-2 rounded-xl text-center text-sm">🌊 Struktur Bawah Air & Offshore</div>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <!-- 6. HOW (Bagaimana) -->
+        <div class="desc-card bg-white rounded-2xl p-6 shadow-md hover:shadow-lg transition">
+          <div class="flex items-start gap-4">
+            <div class="bg-[#FFB22C]/20 p-3 rounded-xl">
+              <i class="fas fa-question-circle text-2xl text-[#FFB22C]"></i>
+            </div>
+            <div>
+              <h3 class="text-xl font-bold text-[#854836] mb-2">🔧 HOW - Bagaimana Mendapatkan Sertifikasi?</h3>
+              <ol class="space-y-2 text-gray-600 list-decimal list-inside">
+                <li><strong>Mendaftar</strong> - Isi formulir pendaftaran online atau datang ke training center</li>
+                <li><strong>Mengikuti Pelatihan</strong> - 5 hari pelatihan intensif dengan instruktur bersertifikasi</li>
+                <li><strong>Praktik Langsung</strong> - Latihan pengelasan posisi 3G dengan material dan alat standar industri</li>
+                <li><strong>Uji Kompetensi</strong> - Dilakukan oleh asesor BNSP untuk menilai kemampuan praktik dan teori</li>
+                <li><strong>Mendapatkan Sertifikat</strong> - Sertifikat BNSP dikeluarkan bagi peserta yang dinyatakan kompeten</li>
+                <li><strong>Penempatan Kerja</strong> - Bantuan penyaluran kerja ke perusahaan mitra bagi lulusan terbaik</li>
+              </ol>
+            </div>
           </div>
         </div>
       </div>
       
-      <!-- Right Column: Deskripsi Detail -->
+      <!-- RIGHT COLUMN: Judul, Syarat, Materi, Fasilitas, Tujuan, CTA -->
       <div class="space-y-6">
-        <!-- Header -->
+        <!-- Image & Header -->
+        <div>
+          <img src="https://images.unsplash.com/photo-1504917595217-d4dc5ebe6122?w=800&h=500&fit=crop" alt="Welder 3G" class="w-full rounded-2xl shadow-lg object-cover h-64 lg:h-72">
+        </div>
+        
         <div class="bg-white rounded-2xl p-6 shadow-md">
-          <h1 class="text-3xl md:text-4xl font-bold text-gray-800">Welder 3G (SMAW)</h1>
-          <p class="text-gray-500 mt-2">Sertifikasi pengelasan posisi vertikal dengan metode Shielded Metal Arc Welding (SMAW)</p>
+          <div class="flex items-center gap-4 flex-wrap mb-4">
+            <span class="bg-[#FFB22C] text-black px-4 py-1 rounded-full text-sm font-semibold">WELDING</span>
+            <span class="bg-gray-100 text-gray-700 px-4 py-1 rounded-full text-sm"><i class="fas fa-certificate mr-1"></i> BNSP</span>
+            <span class="bg-gray-100 text-gray-700 px-4 py-1 rounded-full text-sm"><i class="far fa-calendar-alt mr-1"></i> 5 Hari (40 Jam)</span>
+          </div>
+          <h1 class="text-3xl md:text-4xl font-bold text-gray-800 mb-2">Welder 3G (SMAW)</h1>
+          <p class="text-gray-500">Sertifikasi pengelasan posisi vertikal dengan metode Shielded Metal Arc Welding</p>
+          <div class="text-3xl font-bold text-[#FFB22C] mt-4">Rp 3.500.000</div>
+          <p class="text-sm text-gray-400 mt-1">*sudah termasuk sertifikat, modul, alat praktik, dan konsumsi</p>
         </div>
         
-        <!-- 5W Description Section -->
-        <div class="bg-gradient-to-r from-[#FFB22C]/10 to-white rounded-2xl p-6 shadow-md border-l-4 border-[#FFB22C]">
-          <h2 class="text-2xl font-bold text-[#854836] mb-4">📋 Tentang Program Ini</h2>
-          <p class="text-gray-700 leading-relaxed">Welder 3G adalah sertifikasi keahlian pengelasan pada posisi vertikal (vertical position) menggunakan metode SMAW. Posisi 3G merupakan salah satu posisi kritis dalam pengelasan karena membutuhkan teknik dan kontrol yang presisi untuk menghasilkan lasan yang kuat dan rapi.</p>
-        </div>
-        
-        <!-- 5W Cards -->
-        <div class="grid grid-cols-1 gap-4">
-          <!-- 1. APA ITU -->
-          <div class="desc-card bg-white rounded-2xl p-6 shadow-md hover:shadow-lg transition">
-            <div class="flex items-start gap-4">
-              <div class="bg-[#FFB22C]/20 p-3 rounded-xl">
-                <i class="fas fa-question-circle text-2xl text-[#FFB22C]"></i>
-              </div>
-              <div>
-                <h3 class="text-xl font-bold text-[#854836] mb-2">1. Apa itu Welder 3G (SMAW)?</h3>
-                <p class="text-gray-600 leading-relaxed">Welder 3G adalah sertifikasi kompetensi pengelasan dengan posisi pengelasan vertikal (vertical groove weld) menggunakan metode SMAW (Shielded Metal Arc Welding) atau las listrik. Angka "3" menunjukkan posisi pengelasan vertikal, sementara "G" menunjukkan jenis sambungan alur (groove weld). Posisi ini mengharuskan tukang las untuk mengelas pada permukaan vertikal dengan gerakan dari bawah ke atas atau sebaliknya, yang membutuhkan keterampilan dan kontrol busur las yang sangat baik.</p>
-              </div>
-            </div>
-          </div>
-          
-          <!-- 2. KAPAN DIBUTUHKAN -->
-          <div class="desc-card bg-white rounded-2xl p-6 shadow-md hover:shadow-lg transition">
-            <div class="flex items-start gap-4">
-              <div class="bg-[#FFB22C]/20 p-3 rounded-xl">
-                <i class="fas fa-clock text-2xl text-[#FFB22C]"></i>
-              </div>
-              <div>
-                <h3 class="text-xl font-bold text-[#854836] mb-2">2. Kapan Welder 3G Dibutuhkan?</h3>
-                <p class="text-gray-600 leading-relaxed">Sertifikasi Welder 3G dibutuhkan ketika:</p>
-                <ul class="mt-2 space-y-1 text-gray-600">
-                  <li class="flex items-start gap-2"><i class="fas fa-check-circle text-[#FFB22C] mt-1"></i> • Pengerjaan konstruksi gedung bertingkat (kolom dan dinding struktural)</li>
-                  <li class="flex items-start gap-2"><i class="fas fa-check-circle text-[#FFB22C] mt-1"></i> • Pembuatan tangki vertikal dan silinder industri</li>
-                  <li class="flex items-start gap-2"><i class="fas fa-check-circle text-[#FFB22C] mt-1"></i> • Fabrikasi struktur baja vertikal untuk jembatan dan menara</li>
-                  <li class="flex items-start gap-2"><i class="fas fa-check-circle text-[#FFB22C] mt-1"></i> • Pengerjaan lambung kapal bagian vertikal</li>
-                  <li class="flex items-start gap-2"><i class="fas fa-check-circle text-[#FFB22C] mt-1"></i> • Proyek-proyek yang mensyaratkan sertifikasi welder dari konsultan atau owner</li>
-                </ul>
-              </div>
-            </div>
-          </div>
-          
-          <!-- 3. SIAPA YANG MEMBUTUHKAN -->
-          <div class="desc-card bg-white rounded-2xl p-6 shadow-md hover:shadow-lg transition">
-            <div class="flex items-start gap-4">
-              <div class="bg-[#FFB22C]/20 p-3 rounded-xl">
-                <i class="fas fa-users text-2xl text-[#FFB22C]"></i>
-              </div>
-              <div>
-                <h3 class="text-xl font-bold text-[#854836] mb-2">3. Siapa yang Membutuhkan Welder 3G?</h3>
-                <ul class="space-y-2 text-gray-600">
-                  <li class="flex items-start gap-2"><i class="fas fa-user-check text-[#FFB22C] mt-1"></i> • <strong>Tukang Las Profesional</strong> - untuk meningkatkan kualifikasi dan nilai jual</li>
-                  <li class="flex items-start gap-2"><i class="fas fa-building text-[#FFB22C] mt-1"></i> • <strong>Perusahaan Kontraktor</strong> - untuk memenuhi persyaratan proyek</li>
-                  <li class="flex items-start gap-2"><i class="fas fa-hard-hat text-[#FFB22C] mt-1"></i> • <strong>Industri Manufaktur</strong> - yang memproduksi komponen dengan sambungan vertikal</li>
-                  <li class="flex items-start gap-2"><i class="fas fa-ship text-[#FFB22C] mt-1"></i> • <strong>Galangan Kapal</strong> - untuk pengerjaan konstruksi kapal</li>
-                  <li class="flex items-start gap-2"><i class="fas fa-oil-can text-[#FFB22C] mt-1"></i> • <strong>Perusahaan Migas & Petrokimia</strong> - untuk fabrikasi peralatan vertikal</li>
-                  <li class="flex items-start gap-2"><i class="fas fa-graduation-cap text-[#FFB22C] mt-1"></i> • <strong>Lulusan SMK/SMA</strong> - yang ingin berkarir di bidang pengelasan</li>
-                </ul>
-              </div>
-            </div>
-          </div>
-          
-          <!-- 4. KENAPA DIBUTUHKAN -->
-          <div class="desc-card bg-white rounded-2xl p-6 shadow-md hover:shadow-lg transition">
-            <div class="flex items-start gap-4">
-              <div class="bg-[#FFB22C]/20 p-3 rounded-xl">
-                <i class="fas fa-chart-line text-2xl text-[#FFB22C]"></i>
-              </div>
-              <div>
-                <h3 class="text-xl font-bold text-[#854836] mb-2">4. Kenapa Welder 3G Dibutuhkan?</h3>
-                <ul class="space-y-2 text-gray-600">
-                  <li class="flex items-start gap-2"><i class="fas fa-shield-alt text-[#FFB22C] mt-1"></i> • <strong>Standar Keselamatan & Kualitas</strong> - Menjamin hasil lasan memenuhi standar keamanan struktural</li>
-                  <li class="flex items-start gap-2"><i class="fas fa-chart-simple text-[#FFB22C] mt-1"></i> • <strong>Persyaratan Proyek</strong> - Mayoritas proyek konstruksi dan industri mensyaratkan welder bersertifikasi</li>
-                  <li class="flex items-start gap-2"><i class="fas fa-dollar-sign text-[#FFB22C] mt-1"></i> • <strong>Nilai Ekonomi Lebih Tinggi</strong> - Welder bersertifikasi memiliki tarif upah 30-50% lebih tinggi</li>
-                  <li class="flex items-start gap-2"><i class="fas fa-globe text-[#FFB22C] mt-1"></i> • <strong>Diakui Secara Nasional & Internasional</strong> - Sertifikasi BNSP diakui di seluruh Indonesia dan banyak perusahaan multinasional</li>
-                  <li class="flex items-start gap-2"><i class="fas fa-certificate text-[#FFB22C] mt-1"></i> • <strong>Legalitas Tenaga Kerja</strong> - Memenuhi regulasi ketenagakerjaan untuk pekerjaan las struktural</li>
-                </ul>
-              </div>
-            </div>
-          </div>
-          
-          <!-- 5. DIMANA DIBUTUHKAN -->
-          <div class="desc-card bg-white rounded-2xl p-6 shadow-md hover:shadow-lg transition">
-            <div class="flex items-start gap-4">
-              <div class="bg-[#FFB22C]/20 p-3 rounded-xl">
-                <i class="fas fa-map-marker-alt text-2xl text-[#FFB22C]"></i>
-              </div>
-              <div>
-                <h3 class="text-xl font-bold text-[#854836] mb-2">5. Dimana Welder 3G Dibutuhkan?</h3>
-                <div class="grid grid-cols-1 md:grid-cols-2 gap-3 mt-2">
-                  <div class="bg-gray-50 p-3 rounded-xl">
-                    <i class="fas fa-city text-[#FFB22C] mr-2"></i> Proyek Konstruksi Gedung
-                  </div>
-                  <div class="bg-gray-50 p-3 rounded-xl">
-                    <i class="fas fa-industry text-[#FFB22C] mr-2"></i> Pabrik & Manufaktur
-                  </div>
-                  <div class="bg-gray-50 p-3 rounded-xl">
-                    <i class="fas fa-bridge text-[#FFB22C] mr-2"></i> Konstruksi Jembatan & Flyover
-                  </div>
-                  <div class="bg-gray-50 p-3 rounded-xl">
-                    <i class="fas fa-oil-can text-[#FFB22C] mr-2"></i> Kilang Minyak & Gas
-                  </div>
-                  <div class="bg-gray-50 p-3 rounded-xl">
-                    <i class="fas fa-ship text-[#FFB22C] mr-2"></i> Galangan Kapal & Dok
-                  </div>
-                  <div class="bg-gray-50 p-3 rounded-xl">
-                    <i class="fas fa-charging-station text-[#FFB22C] mr-2"></i> Pembangkit Listrik
-                  </div>
-                  <div class="bg-gray-50 p-3 rounded-xl">
-                    <i class="fas fa-train text-[#FFB22C] mr-2"></i> Industri Perkeretaapian
-                  </div>
-                  <div class="bg-gray-50 p-3 rounded-xl">
-                    <i class="fas fa-water text-[#FFB22C] mr-2"></i> Struktur Bawah Air & Offshore
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-        
-        <!-- Additional Information: Syarat, Materi, Fasilitas, Tujuan -->
+        <!-- Syarat -->
         <div class="bg-white rounded-2xl p-6 shadow-md">
           <h3 class="text-xl font-bold text-[#854836] mb-4 flex items-center gap-2"><i class="fas fa-clipboard-list"></i> Syarat Mengikuti Training</h3>
-          <div class="grid grid-cols-1 md:grid-cols-2 gap-3">
+          <div class="grid grid-cols-1 gap-3">
             <div class="flex items-center gap-2"><i class="fas fa-check-circle text-[#FFB22C]"></i> Fotocopy KTP (3 lembar)</div>
-            <div class="flex items-center gap-2"><i class="fas fa-check-circle text-[#FFB22C]"></i> Fotocopy Ijazah SMA/SMK (3 lembar)</div>
-            <div class="flex items-center gap-2"><i class="fas fa-check-circle text-[#FFB22C]"></i> Pas foto 3x4 (4 lembar)</div>
+            <div class="flex items-center gap-2"><i class="fas fa-check-circle text-[#FFB22C]"></i> Fotocopy Ijazah minimal SMA/SMK (3 lembar)</div>
+            <div class="flex items-center gap-2"><i class="fas fa-check-circle text-[#FFB22C]"></i> Pas foto 3x4 (4 lembar, background merah)</div>
             <div class="flex items-center gap-2"><i class="fas fa-check-circle text-[#FFB22C]"></i> Surat keterangan sehat dari dokter</div>
-            <div class="flex items-center gap-2"><i class="fas fa-check-circle text-[#FFB22C]"></i> Menguasai dasar pengelasan</div>
+            <div class="flex items-center gap-2"><i class="fas fa-check-circle text-[#FFB22C]"></i> Menguasai dasar pengelasan (minimal 3 bulan pengalaman)</div>
           </div>
         </div>
         
+        <!-- Materi -->
         <div class="bg-white rounded-2xl p-6 shadow-md">
           <h3 class="text-xl font-bold text-[#854836] mb-4 flex items-center gap-2"><i class="fas fa-book-open"></i> Materi yang Diajarkan</h3>
-          <div class="grid grid-cols-1 md:grid-cols-2 gap-3">
-            <div class="flex items-center gap-2"><i class="fas fa-check-circle text-[#FFB22C]"></i> Teknik pengelasan posisi datar</div>
-            <div class="flex items-center gap-2"><i class="fas fa-check-circle text-[#FFB22C]"></i> Teknik pengelasan posisi horizontal</div>
-            <div class="flex items-center gap-2"><i class="fas fa-check-circle text-[#FFB22C]"></i> Teknik pengelasan posisi vertikal (3G)</div>
-            <div class="flex items-center gap-2"><i class="fas fa-check-circle text-[#FFB22C]"></i> Penggunaan elektroda E7016</div>
-            <div class="flex items-center gap-2"><i class="fas fa-check-circle text-[#FFB22C]"></i> Keselamatan kerja pengelasan (K3)</div>
-            <div class="flex items-center gap-2"><i class="fas fa-check-circle text-[#FFB22C]"></i> Praktik langsung dengan instruktur bersertifikasi</div>
-            <div class="flex items-center gap-2"><i class="fas fa-check-circle text-[#FFB22C]"></i> Pengujian visual & destructive test</div>
-            <div class="flex items-center gap-2"><i class="fas fa-check-circle text-[#FFB22C]"></i> Standar pengelasan AWS D1.1</div>
+          <div class="grid grid-cols-1 gap-3">
+            <div class="flex items-center gap-2"><i class="fas fa-check-circle text-[#FFB22C]"></i> Teknik pengelasan posisi datar (1G) & horizontal (2G)</div>
+            <div class="flex items-center gap-2"><i class="fas fa-check-circle text-[#FFB22C]"></i> Teknik pengelasan posisi vertikal (3G) - bawah ke atas</div>
+            <div class="flex items-center gap-2"><i class="fas fa-check-circle text-[#FFB22C]"></i> Penggunaan elektroda E7016 dan pengaturan arus</div>
+            <div class="flex items-center gap-2"><i class="fas fa-check-circle text-[#FFB22C]"></i> Keselamatan kerja pengelasan (APD, ventilasi, proteksi)</div>
+            <div class="flex items-center gap-2"><i class="fas fa-check-circle text-[#FFB22C]"></i> Pengujian visual dan destructive test (bend test)</div>
+            <div class="flex items-center gap-2"><i class="fas fa-check-circle text-[#FFB22C]"></i> Standar pengelasan AWS D1.1 dan kode prosedur</div>
           </div>
         </div>
         
+        <!-- Fasilitas -->
         <div class="bg-white rounded-2xl p-6 shadow-md">
           <h3 class="text-xl font-bold text-[#854836] mb-4 flex items-center gap-2"><i class="fas fa-gift"></i> Fasilitas yang Didapatkan</h3>
-          <div class="grid grid-cols-1 md:grid-cols-2 gap-3">
-            <div class="flex items-center gap-2"><i class="fas fa-check-circle text-[#FFB22C]"></i> Sertifikat BNSP</div>
-            <div class="flex items-center gap-2"><i class="fas fa-check-circle text-[#FFB22C]"></i> Modul pelatihan lengkap</div>
-            <div class="flex items-center gap-2"><i class="fas fa-check-circle text-[#FFB22C]"></i> Alat las dan APD lengkap</div>
-            <div class="flex items-center gap-2"><i class="fas fa-check-circle text-[#FFB22C]"></i> Makan siang & coffee break</div>
-            <div class="flex items-center gap-2"><i class="fas fa-check-circle text-[#FFB22C]"></i> Ruang praktik ber-AC & modern</div>
-            <div class="flex items-center gap-2"><i class="fas fa-check-circle text-[#FFB22C]"></i> Asuransi kecelakaan selama training</div>
-            <div class="flex items-center gap-2"><i class="fas fa-check-circle text-[#FFB22C]"></i> Konsultasi karir pasca training</div>
-            <div class="flex items-center gap-2"><i class="fas fa-check-circle text-[#FFB22C]"></i> Sertifikat digital & hardcopy</div>
+          <div class="grid grid-cols-1 gap-3">
+            <div class="flex items-center gap-2"><i class="fas fa-check-circle text-[#FFB22C]"></i> Sertifikat BNSP (Nasional) + Transcript nilai</div>
+            <div class="flex items-center gap-2"><i class="fas fa-check-circle text-[#FFB22C]"></i> Modul pelatihan lengkap (hardcopy & digital)</div>
+            <div class="flex items-center gap-2"><i class="fas fa-check-circle text-[#FFB22C]"></i> Alat las dan APD lengkap selama training</div>
+            <div class="flex items-center gap-2"><i class="fas fa-check-circle text-[#FFB22C]"></i> Makan siang + coffee break (2x sehari)</div>
+            <div class="flex items-center gap-2"><i class="fas fa-check-circle text-[#FFB22C]"></i> Ruang praktik ber-AC dengan perlengkapan modern</div>
+            <div class="flex items-center gap-2"><i class="fas fa-check-circle text-[#FFB22C]"></i> Asuransi kecelakaan diri selama masa training</div>
+            <div class="flex items-center gap-2"><i class="fas fa-check-circle text-[#FFB22C]"></i> Konsultasi karir & bantuan penyaluran kerja</div>
           </div>
         </div>
         
+        <!-- Tujuan -->
         <div class="bg-white rounded-2xl p-6 shadow-md">
-          <h3 class="text-xl font-bold text-[#854836] mb-4 flex items-center gap-2"><i class="fas fa-bullseye"></i> Tujuan & Harapan Setelah Training</h3>
+          <h3 class="text-xl font-bold text-[#854836] mb-4 flex items-center gap-2"><i class="fas fa-bullseye"></i> Tujuan & Kompetensi yang Diraih</h3>
           <div class="grid grid-cols-1 gap-3">
-            <div class="flex items-center gap-2"><i class="fas fa-check-circle text-[#FFB22C]"></i> Menguasai teknik pengelasan posisi 3G (vertikal) dengan standar industri</div>
+            <div class="flex items-center gap-2"><i class="fas fa-check-circle text-[#FFB22C]"></i> Menguasai teknik pengelasan posisi 3G (vertikal) standar industri</div>
             <div class="flex items-center gap-2"><i class="fas fa-check-circle text-[#FFB22C]"></i> Mendapatkan sertifikasi BNSP yang diakui secara nasional</div>
-            <div class="flex items-center gap-2"><i class="fas fa-check-circle text-[#FFB22C]"></i> Siap bekerja sebagai welder profesional di proyek konstruksi dan manufaktur</div>
+            <div class="flex items-center gap-2"><i class="fas fa-check-circle text-[#FFB22C]"></i> Siap bekerja sebagai welder profesional di proyek konstruksi & manufaktur</div>
             <div class="flex items-center gap-2"><i class="fas fa-check-circle text-[#FFB22C]"></i> Memahami standar keselamatan kerja pengelasan (K3) secara mendalam</div>
             <div class="flex items-center gap-2"><i class="fas fa-check-circle text-[#FFB22C]"></i> Meningkatkan nilai jual dan daya saing di pasar tenaga kerja</div>
             <div class="flex items-center gap-2"><i class="fas fa-check-circle text-[#FFB22C]"></i> Memiliki peluang karir di perusahaan nasional dan multinasional</div>
+          </div>
+        </div>
+        
+        <!-- CTA CLOSING - Sticky di bagian bawah -->
+        <div class="sticky bottom-6 z-30" id="ctaSticky">
+          <div class="bg-gradient-to-r from-[#FFB22C] to-[#FFD966] rounded-2xl p-6 shadow-2xl cta-sticky">
+            <div class="flex flex-col md:flex-row items-center justify-between gap-4">
+              <div>
+                <h3 class="text-xl md:text-2xl font-bold text-black">🎯 Siap Menjadi Welder Bersertifikasi?</h3>
+                <p class="text-black/80 text-sm mt-1">Kuota terbatas! Daftar sekarang dan dapatkan bonus modul digital + konsultasi karir gratis.</p>
+              </div>
+              <div class="flex gap-3">
+                <button id="addToCartBtn" class="bg-black text-white font-bold px-8 py-3 rounded-full hover:bg-gray-800 transition transform hover:scale-105">
+                  <i class="fas fa-shopping-cart mr-2"></i> Tambah ke Keranjang
+                </button>
+                <button id="buyNowBtn" class="bg-white text-black font-bold px-8 py-3 rounded-full hover:bg-gray-100 transition transform hover:scale-105">
+                  <i class="fas fa-bolt mr-2"></i> Beli Sekarang
+                </button>
+              </div>
+            </div>
+            <div class="flex justify-center gap-6 mt-4 text-xs text-black/70">
+              <span><i class="fas fa-certificate mr-1"></i> Sertifikat BNSP</span>
+              <span><i class="fas fa-user-graduate mr-1"></i> Garansi Kompetensi</span>
+              <span><i class="fab fa-whatsapp mr-1"></i> Konsultasi 24/7</span>
+            </div>
           </div>
         </div>
       </div>
