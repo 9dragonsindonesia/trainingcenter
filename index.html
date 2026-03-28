@@ -2,331 +2,23 @@
 <html lang="id">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
-  <title>Offshore & Industrial Training Center | Sertifikasi Profesional</title>
-  <!-- Google Fonts -->
-  <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,500;14..32,600;14..32,700;14..32,800&family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Training Center | Sertifikasi Industri & Offshore</title>
+  <link rel="stylesheet" href="css/style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-  <!-- AOS Animation -->
   <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
-  <style>
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
-
-    body {
-      font-family: 'Inter', sans-serif;
-      background: #F7F7F7;
-      color: #000000;
-      line-height: 1.5;
-      scroll-behavior: smooth;
-    }
-
-    /* Color Palette */
-    :root {
-      --bg-light: #F7F7F7;
-      --yellow: #FFB22C;
-      --brown: #854836;
-      --black: #000000;
-      --gray: #4a4a4a;
-      --white: #FFFFFF;
-    }
-
-    .container {
-      max-width: 1280px;
-      margin: 0 auto;
-      padding: 0 32px;
-    }
-
-    /* Navbar */
-    .navbar {
-      background: var(--black);
-      position: sticky;
-      top: 0;
-      z-index: 1000;
-      padding: 16px 0;
-      border-bottom: 3px solid var(--yellow);
-    }
-    .nav-container {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      flex-wrap: wrap;
-      gap: 20px;
-    }
-    .logo {
-      font-size: 1.5rem;
-      font-weight: 800;
-      color: var(--yellow);
-    }
-    .logo span {
-      color: var(--bg-light);
-    }
-    .nav-links {
-      display: flex;
-      gap: 28px;
-      align-items: center;
-      flex-wrap: wrap;
-    }
-    .nav-links a {
-      text-decoration: none;
-      color: var(--bg-light);
-      font-weight: 500;
-      transition: 0.3s;
-    }
-    .nav-links a:hover {
-      color: var(--yellow);
-    }
-    .cart-icon {
-      position: relative;
-      cursor: pointer;
-      font-size: 1.3rem;
-      color: var(--yellow);
-    }
-    .cart-count {
-      position: absolute;
-      top: -10px;
-      right: -12px;
-      background: var(--yellow);
-      color: var(--black);
-      border-radius: 50%;
-      padding: 2px 8px;
-      font-size: 0.7rem;
-      font-weight: bold;
-    }
-
-    /* Hero */
-    .hero {
-      min-height: 75vh;
-      background: linear-gradient(rgba(0,0,0,0.75), rgba(0,0,0,0.65)), url('https://images.unsplash.com/photo-1581091226033-d5c48150dbaa?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80');
-      background-size: cover;
-      background-position: center;
-      display: flex;
-      align-items: center;
-    }
-    .hero-content h1 {
-      font-size: 3.2rem;
-      color: var(--yellow);
-      margin-bottom: 20px;
-    }
-    .hero-content p {
-      font-size: 1.2rem;
-      color: var(--bg-light);
-      margin-bottom: 32px;
-    }
-    .btn-primary {
-      background: var(--yellow);
-      color: var(--black);
-      padding: 14px 36px;
-      border-radius: 40px;
-      text-decoration: none;
-      font-weight: 700;
-      display: inline-block;
-      transition: 0.3s;
-    }
-    .btn-primary:hover {
-      background: var(--brown);
-      color: white;
-      transform: translateY(-2px);
-    }
-
-    /* Section */
-    .section {
-      padding: 70px 0;
-    }
-    .section-title {
-      text-align: center;
-      font-size: 2.3rem;
-      font-weight: 800;
-      margin-bottom: 16px;
-      color: var(--black);
-    }
-    .section-title::after {
-      content: '';
-      display: block;
-      width: 80px;
-      height: 3px;
-      background: var(--yellow);
-      margin: 16px auto 0;
-    }
-    .section-sub {
-      text-align: center;
-      color: var(--gray);
-      max-width: 700px;
-      margin: 0 auto 50px;
-    }
-
-    /* Filter & Search */
-    .filter-bar {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-      gap: 15px;
-      margin-bottom: 40px;
-    }
-    .filter-btn {
-      background: var(--white);
-      border: 1px solid #ddd;
-      padding: 8px 24px;
-      border-radius: 40px;
-      cursor: pointer;
-      font-weight: 500;
-      transition: 0.3s;
-    }
-    .filter-btn.active, .filter-btn:hover {
-      background: var(--yellow);
-      border-color: var(--yellow);
-      color: var(--black);
-    }
-    .search-box {
-      padding: 10px 20px;
-      border-radius: 40px;
-      border: 1px solid #ddd;
-      width: 250px;
-      font-family: 'Inter', sans-serif;
-    }
-
-    /* Training Cards Grid */
-    .training-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
-      gap: 30px;
-    }
-    .training-card {
-      background: var(--white);
-      border-radius: 20px;
-      overflow: hidden;
-      box-shadow: 0 5px 20px rgba(0,0,0,0.05);
-      transition: 0.3s;
-      border-left: 4px solid var(--yellow);
-    }
-    .training-card:hover {
-      transform: translateY(-5px);
-      box-shadow: 0 15px 35px rgba(0,0,0,0.1);
-    }
-    .card-body {
-      padding: 24px;
-    }
-    .card-category {
-      font-size: 0.75rem;
-      color: var(--brown);
-      font-weight: 600;
-      text-transform: uppercase;
-      letter-spacing: 1px;
-    }
-    .card-body h3 {
-      font-size: 1.3rem;
-      margin: 10px 0;
-      color: var(--black);
-    }
-    .card-price {
-      font-size: 1.6rem;
-      font-weight: 800;
-      color: var(--yellow);
-      margin: 12px 0;
-    }
-    .card-duration {
-      display: flex;
-      align-items: center;
-      gap: 8px;
-      color: var(--gray);
-      font-size: 0.85rem;
-      margin-bottom: 16px;
-    }
-    .add-to-cart {
-      background: var(--black);
-      color: white;
-      border: none;
-      padding: 12px 20px;
-      border-radius: 40px;
-      font-weight: 600;
-      cursor: pointer;
-      width: 100%;
-      transition: 0.3s;
-    }
-    .add-to-cart:hover {
-      background: var(--yellow);
-      color: var(--black);
-    }
-
-    /* Cart Modal */
-    .cart-modal {
-      display: none;
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background: rgba(0,0,0,0.7);
-      z-index: 2000;
-      justify-content: center;
-      align-items: center;
-    }
-    .cart-content {
-      background: var(--white);
-      width: 90%;
-      max-width: 550px;
-      border-radius: 24px;
-      padding: 30px;
-      max-height: 80vh;
-      overflow-y: auto;
-    }
-    .cart-item {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      padding: 12px 0;
-      border-bottom: 1px solid #eee;
-    }
-    .cart-total {
-      font-size: 1.3rem;
-      font-weight: bold;
-      margin: 20px 0;
-      text-align: right;
-    }
-    .checkout-wa {
-      background: #25D366;
-      color: #075E54;
-      width: 100%;
-      padding: 14px;
-      border: none;
-      border-radius: 40px;
-      font-weight: bold;
-      font-size: 1rem;
-      cursor: pointer;
-    }
-
-    /* Footer */
-    footer {
-      background: var(--black);
-      color: var(--bg-light);
-      padding: 50px 0 30px;
-    }
-    .footer-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-      gap: 40px;
-    }
-
-    @media (max-width: 768px) {
-      .hero-content h1 { font-size: 2rem; }
-      .section-title { font-size: 1.8rem; }
-      .container { padding: 0 20px; }
-    }
-  </style>
 </head>
 <body>
 
 <nav class="navbar">
   <div class="container nav-container">
-    <div class="logo">TRAINING<span>CENTER</span></div>
+    <div class="logo" onclick="location.href='index.html'">TRAINING<span>CENTER</span></div>
     <div class="nav-links">
-      <a href="#home">Beranda</a>
-      <a href="#training">Program</a>
-      <a href="#about">Tentang</a>
-      <a href="#contact">Kontak</a>
+      <a href="index.html">Beranda</a>
+      <a href="index.html#training">Program</a>
+      <a href="index.html#about">Tentang</a>
+      <a href="index.html#contact">Kontak</a>
       <div class="cart-icon" id="cartIcon">
         <i class="fas fa-shopping-cart"></i>
         <span class="cart-count" id="cartCount">0</span>
@@ -335,81 +27,84 @@
   </div>
 </nav>
 
-<!-- Hero -->
-<section class="hero" id="home">
-  <div class="container hero-content">
-    <h1 data-aos="fade-up">Sertifikasi Profesional<br>Untuk Karir Industri</h1>
-    <p data-aos="fade-up" data-aos-delay="200">Pelatihan bersertifikasi untuk offshore, welding, konstruksi, dan manajemen proyek. Diakui nasional & internasional.</p>
-    <a href="#training" class="btn-primary" data-aos="fade-up" data-aos-delay="400">Lihat Program</a>
-  </div>
-</section>
-
-<!-- Training Section with Filter & Cart -->
-<section class="section" id="training">
-  <div class="container">
-    <h2 class="section-title" data-aos="fade-up">Program Pelatihan</h2>
-    <p class="section-sub" data-aos="fade-up">Pilih program sesuai kebutuhan karir Anda. Semua pelatihan bersertifikat resmi.</p>
-    
-    <div class="filter-bar" data-aos="fade-up">
-      <button class="filter-btn active" data-filter="all">Semua</button>
-      <button class="filter-btn" data-filter="welding">Welding</button>
-      <button class="filter-btn" data-filter="offshore">Offshore</button>
-      <button class="filter-btn" data-filter="management">Management</button>
-      <button class="filter-btn" data-filter="engineering">Engineering</button>
-      <button class="filter-btn" data-filter="heavy">Alat Berat</button>
+<main>
+  <!-- Hero Section -->
+  <section class="hero" id="home">
+    <div class="container hero-content">
+      <h1 data-aos="fade-up">Sertifikasi Profesional<br>Untuk Karir Industri</h1>
+      <p data-aos="fade-up" data-aos-delay="200">Pelatihan bersertifikasi untuk offshore, welding, konstruksi, dan manajemen proyek. Diakui nasional & internasional.</p>
+      <a href="#training" class="btn-primary" data-aos="fade-up" data-aos-delay="400">Lihat Program</a>
     </div>
-    
-    <div class="training-grid" id="trainingGrid"></div>
-  </div>
-</section>
+  </section>
 
-<!-- About -->
-<section class="section" id="about">
-  <div class="container">
-    <div style="display: flex; flex-wrap: wrap; gap: 50px; align-items: center;">
-      <div data-aos="fade-right" style="flex:1">
-        <h2 style="font-size: 2rem; margin-bottom: 20px;">Tentang Kami</h2>
-        <p>Lembaga pelatihan industri terakreditasi dengan pengalaman lebih dari 15 tahun. Kami telah melatih ribuan tenaga profesional yang bekerja di perusahaan migas, konstruksi, dan manufaktur.</p>
-        <p style="margin-top: 16px;">Instruktur bersertifikasi, fasilitas modern, dan kurikulum yang selalu diperbarui sesuai standar industri.</p>
-        <div style="margin-top: 30px; display: flex; gap: 30px;">
-          <div><i class="fas fa-certificate" style="color: var(--yellow);"></i> BNSP Terakreditasi</div>
-          <div><i class="fas fa-users" style="color: var(--yellow);"></i> 5000+ Alumni</div>
-        </div>
+  <!-- Filter & Training Section -->
+  <section class="section" id="training">
+    <div class="container">
+      <h2 class="section-title" data-aos="fade-up">Program Pelatihan</h2>
+      <p class="section-sub" data-aos="fade-up">Pilih program sesuai kebutuhan karir Anda. Semua pelatihan bersertifikat resmi.</p>
+      
+      <div class="filter-bar" data-aos="fade-up">
+        <button class="filter-btn active" data-filter="all">Semua</button>
+        <button class="filter-btn" data-filter="welding">Welding</button>
+        <button class="filter-btn" data-filter="offshore">Offshore</button>
+        <button class="filter-btn" data-filter="management">Management</button>
+        <button class="filter-btn" data-filter="engineering">Engineering</button>
+        <button class="filter-btn" data-filter="heavy">Alat Berat</button>
+        <input type="text" class="search-box" id="searchInput" placeholder="Cari training...">
       </div>
-      <div data-aos="fade-left" style="flex:1; text-align:center;">
-        <img src="https://cdn-icons-png.flaticon.com/512/4210/4210455.png" width="300" alt="Training">
-      </div>
+      
+      <div class="training-grid" id="trainingGrid"></div>
     </div>
-  </div>
-</section>
+  </section>
 
-<!-- Contact -->
-<section class="section" id="contact">
-  <div class="container">
-    <div style="background: var(--white); border-radius: 32px; padding: 48px; box-shadow: 0 10px 30px rgba(0,0,0,0.05);">
-      <h2 style="text-align: center; margin-bottom: 30px;">Hubungi Kami</h2>
-      <div style="display: flex; flex-wrap: wrap; gap: 40px;">
-        <div style="flex:1">
-          <p><i class="fas fa-map-marker-alt" style="color: var(--yellow); width: 30px;"></i> Jl. Industri Raya No. 45, Jakarta Timur</p>
-          <p style="margin: 16px 0;"><i class="fas fa-phone" style="color: var(--yellow);"></i> +62 21 1234 5678</p>
-          <p><i class="fas fa-envelope" style="color: var(--yellow);"></i> info@trainingcenter.id</p>
+  <!-- About Section -->
+  <section class="section" id="about">
+    <div class="container">
+      <div class="about-wrapper">
+        <div class="about-text" data-aos="fade-right">
+          <h2>Tentang Kami</h2>
+          <p>Lembaga pelatihan industri terakreditasi dengan pengalaman lebih dari 15 tahun. Kami telah melatih ribuan tenaga profesional yang bekerja di perusahaan migas, konstruksi, dan manufaktur.</p>
+          <p>Instruktur bersertifikasi, fasilitas modern, dan kurikulum yang selalu diperbarui sesuai standar industri.</p>
+          <div class="about-stats">
+            <div><i class="fas fa-certificate"></i> BNSP Terakreditasi</div>
+            <div><i class="fas fa-users"></i> 5000+ Alumni</div>
+          </div>
         </div>
-        <div style="flex:1">
-          <p><i class="fab fa-whatsapp" style="color: #25D366; font-size: 1.2rem;"></i> +62 812 3456 7890 (Konsultasi)</p>
-          <p style="margin-top: 16px;"><i class="far fa-clock" style="color: var(--yellow);"></i> Senin - Jumat: 08:00 - 17:00</p>
+        <div class="about-image" data-aos="fade-left">
+          <img src="https://cdn-icons-png.flaticon.com/512/4210/4210455.png" alt="Training">
         </div>
       </div>
     </div>
-  </div>
-</section>
+  </section>
+
+  <!-- Contact Section -->
+  <section class="section" id="contact">
+    <div class="container">
+      <div class="contact-card">
+        <h2>Hubungi Kami</h2>
+        <div class="contact-wrapper">
+          <div class="contact-info">
+            <p><i class="fas fa-map-marker-alt"></i> Jl. Industri Raya No. 45, Jakarta Timur</p>
+            <p><i class="fas fa-phone"></i> +62 21 1234 5678</p>
+            <p><i class="fas fa-envelope"></i> info@trainingcenter.id</p>
+          </div>
+          <div class="contact-info">
+            <p><i class="fab fa-whatsapp"></i> +62 812 3456 7890 (Konsultasi)</p>
+            <p><i class="far fa-clock"></i> Senin - Jumat: 08:00 - 17:00</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
 
 <footer>
   <div class="container footer-grid">
-    <div><h3 style="color: var(--yellow);">TRAINING CENTER</h3><p>Membangun kompetensi tenaga profesional Indonesia.</p></div>
+    <div><h3>TRAINING CENTER</h3><p>Membangun kompetensi tenaga profesional Indonesia.</p></div>
     <div><h4>Program Populer</h4><p>Welder 6G</p><p>BOSIET</p><p>Project Management</p><p>Autocad</p></div>
     <div><h4>Kontak</h4><p>info@trainingcenter.id</p><p>+62 21 1234 5678</p></div>
   </div>
-  <div class="container" style="text-align: center; border-top: 1px solid #333; margin-top: 40px; padding-top: 24px;">
+  <div class="footer-bottom">
     <p>&copy; 2025 Training Center - All Rights Reserved</p>
   </div>
 </footer>
@@ -417,184 +112,15 @@
 <!-- Cart Modal -->
 <div id="cartModal" class="cart-modal">
   <div class="cart-content">
-    <h3 style="margin-bottom: 20px;">Keranjang Belanja</h3>
+    <h3>Keranjang Belanja</h3>
     <div id="cartItems"></div>
     <div id="cartTotal" class="cart-total"></div>
     <button id="checkoutWA" class="checkout-wa"><i class="fab fa-whatsapp"></i> Checkout via WhatsApp</button>
-    <button id="closeCart" style="margin-top: 12px; background: none; border: none; color: #888; cursor: pointer; width: 100%;">Tutup</button>
+    <button id="closeCart" class="close-cart">Tutup</button>
   </div>
 </div>
 
 <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-<script>
-  AOS.init({ once: true, duration: 800 });
-
-  // Data Training Lengkap
-  const trainings = [
-    { id: 1, name: "Welder 3G (SMAW)", category: "welding", price: 3500000, duration: "5 Hari", cert: "BNSP" },
-    { id: 2, name: "Welder 4G (SMAW)", category: "welding", price: 3800000, duration: "5 Hari", cert: "BNSP" },
-    { id: 3, name: "Welder 6G (SMAW/GTAW)", category: "welding", price: 5500000, duration: "7 Hari", cert: "BNSP + Internasional" },
-    { id: 4, name: "Welding Inspector (CSWIP)", category: "welding", price: 12500000, duration: "10 Hari", cert: "CSWIP" },
-    { id: 5, name: "BOSIET (OPITO)", category: "offshore", price: 8500000, duration: "3 Hari", cert: "OPITO" },
-    { id: 6, name: "FOET (OPITO)", category: "offshore", price: 6500000, duration: "2 Hari", cert: "OPITO" },
-    { id: 7, name: "H2S & BA", category: "offshore", price: 3200000, duration: "1 Hari", cert: "Internasional" },
-    { id: 8, name: "Project Management Professional", category: "management", price: 7500000, duration: "5 Hari", cert: "PMP Based" },
-    { id: 9, name: "Autocad 2D & 3D", category: "engineering", price: 2800000, duration: "4 Hari", cert: "Sertifikat" },
-    { id: 10, name: "Pipe Fitter", category: "engineering", price: 4200000, duration: "6 Hari", cert: "BNSP" },
-    { id: 11, name: "Crane Operator", category: "heavy", price: 4800000, duration: "5 Hari", cert: "Kemenaker" },
-    { id: 12, name: "Forklift Operator", category: "heavy", price: 3500000, duration: "4 Hari", cert: "Kemenaker" },
-    { id: 13, name: "Scaffolding Erector", category: "engineering", price: 3900000, duration: "4 Hari", cert: "BNSP" },
-    { id: 14, name: "Rigging & Slinging", category: "heavy", price: 3200000, duration: "3 Hari", cert: "BNSP" },
-    { id: 15, name: "Safety Officer (AK3 Umum)", category: "management", price: 5500000, duration: "8 Hari", cert: "Kemnaker" },
-    { id: 16, name: "NDT Level II (UT/MT/PT)", category: "engineering", price: 9800000, duration: "10 Hari", cert: "ASNT" },
-    { id: 17, name: "Offshore Medic", category: "offshore", price: 7200000, duration: "5 Hari", cert: "Internasional" },
-    { id: 18, name: "Heavy Equipment Mechanic", category: "heavy", price: 5800000, duration: "8 Hari", cert: "BNSP" }
-  ];
-
-  let cart = [];
-
-  // Render Training dengan filter
-  let currentFilter = "all";
-  let searchTerm = "";
-
-  function renderTrainings() {
-    let filtered = trainings.filter(t => {
-      if (currentFilter !== "all" && t.category !== currentFilter) return false;
-      if (searchTerm && !t.name.toLowerCase().includes(searchTerm.toLowerCase())) return false;
-      return true;
-    });
-    
-    const grid = document.getElementById('trainingGrid');
-    grid.innerHTML = filtered.map(t => `
-      <div class="training-card" data-aos="fade-up">
-        <div class="card-body">
-          <div class="card-category">${t.category.toUpperCase()} | ${t.cert}</div>
-          <h3>${t.name}</h3>
-          <div class="card-duration"><i class="far fa-calendar-alt"></i> ${t.duration}</div>
-          <div class="card-price">Rp ${t.price.toLocaleString()}</div>
-          <button class="add-to-cart" data-id="${t.id}">+ Tambah ke Keranjang</button>
-        </div>
-      </div>
-    `).join('');
-    
-    document.querySelectorAll('.add-to-cart').forEach(btn => {
-      btn.addEventListener('click', (e) => {
-        const id = parseInt(btn.dataset.id);
-        addToCart(id);
-      });
-    });
-  }
-
-  function addToCart(id) {
-    const training = trainings.find(t => t.id === id);
-    const existing = cart.find(item => item.id === id);
-    if (existing) {
-      existing.quantity++;
-    } else {
-      cart.push({ ...training, quantity: 1 });
-    }
-    updateCartUI();
-    showToast(`${training.name} ditambahkan ke keranjang`);
-  }
-
-  function updateCartUI() {
-    const count = cart.reduce((sum, item) => sum + item.quantity, 0);
-    document.getElementById('cartCount').innerText = count;
-    renderCartModal();
-  }
-
-  function renderCartModal() {
-    const cartDiv = document.getElementById('cartItems');
-    if (cart.length === 0) {
-      cartDiv.innerHTML = '<p style="text-align:center;">Keranjang kosong</p>';
-      document.getElementById('cartTotal').innerHTML = '';
-      return;
-    }
-    cartDiv.innerHTML = cart.map(item => `
-      <div class="cart-item">
-        <div><strong>${item.name}</strong><br>Rp ${item.price.toLocaleString()} x ${item.quantity}</div>
-        <div>
-          <button class="qty-btn" data-id="${item.id}" data-change="-1" style="background:#ddd; border:none; width:28px; border-radius:8px;">-</button>
-          <span style="margin:0 12px;">${item.quantity}</span>
-          <button class="qty-btn" data-id="${item.id}" data-change="1" style="background:#ddd; border:none; width:28px; border-radius:8px;">+</button>
-        </div>
-      </div>
-    `).join('');
-    const total = cart.reduce((sum, item) => sum + (item.price * item.quantity), 0);
-    document.getElementById('cartTotal').innerHTML = `Total: Rp ${total.toLocaleString()}`;
-    
-    document.querySelectorAll('.qty-btn').forEach(btn => {
-      btn.addEventListener('click', (e) => {
-        const id = parseInt(btn.dataset.id);
-        const change = parseInt(btn.dataset.change);
-        const item = cart.find(i => i.id === id);
-        if (item) {
-          item.quantity += change;
-          if (item.quantity <= 0) {
-            cart = cart.filter(i => i.id !== id);
-          }
-          updateCartUI();
-        }
-      });
-    });
-  }
-
-  function showToast(msg) {
-    let toast = document.createElement('div');
-    toast.innerText = msg;
-    toast.style.position = 'fixed';
-    toast.style.bottom = '20px';
-    toast.style.left = '50%';
-    toast.style.transform = 'translateX(-50%)';
-    toast.style.background = '#854836';
-    toast.style.color = 'white';
-    toast.style.padding = '12px 24px';
-    toast.style.borderRadius = '40px';
-    toast.style.zIndex = '3000';
-    document.body.appendChild(toast);
-    setTimeout(() => toast.remove(), 2500);
-  }
-
-  // Filter Event
-  document.querySelectorAll('.filter-btn').forEach(btn => {
-    btn.addEventListener('click', () => {
-      document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
-      btn.classList.add('active');
-      currentFilter = btn.dataset.filter;
-      renderTrainings();
-    });
-  });
-
-  // Cart Modal
-  const cartModal = document.getElementById('cartModal');
-  const cartIcon = document.getElementById('cartIcon');
-  const closeCart = document.getElementById('closeCart');
-  cartIcon.addEventListener('click', () => {
-    renderCartModal();
-    cartModal.style.display = 'flex';
-  });
-  closeCart.addEventListener('click', () => cartModal.style.display = 'none');
-  window.addEventListener('click', (e) => {
-    if (e.target === cartModal) cartModal.style.display = 'none';
-  });
-
-  // Checkout WhatsApp
-  document.getElementById('checkoutWA').addEventListener('click', () => {
-    if (cart.length === 0) {
-      alert('Keranjang masih kosong. Silakan pilih training terlebih dahulu.');
-      return;
-    }
-    let msg = "Halo Training Center,%0A%0ASaya ingin mendaftar program berikut:%0A%0A";
-    cart.forEach(item => {
-      msg += `📌 ${item.name} - ${item.quantity} x Rp ${item.price.toLocaleString()}%0A`;
-    });
-    const total = cart.reduce((sum, i) => sum + (i.price * i.quantity), 0);
-    msg += `%0A*Total: Rp ${total.toLocaleString()}*%0A%0ATolong informasikan jadwal dan prosedur pembayaran. Terima kasih.`;
-    window.open(`https://wa.me/6281234567890?text=${msg}`, '_blank');
-    cartModal.style.display = 'none';
-  });
-
-  renderTrainings();
-</script>
+<script src="js/main.js"></script>
 </body>
 </html>
