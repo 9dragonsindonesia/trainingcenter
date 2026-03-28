@@ -4,100 +4,131 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Welder 3G (SMAW) | Training Center</title>
-  <link rel="stylesheet" href="../css/style.css">
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <script src="https://cdn.tailwindcss.com"></script>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+  <style>
+    .gradient-card {
+      background: linear-gradient(135deg, #fff 0%, #fef9f0 100%);
+    }
+    .cart-modal {
+      display: none;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0,0,0,0.7);
+      z-index: 2000;
+      justify-content: center;
+      align-items: center;
+    }
+    .cart-modal.show {
+      display: flex;
+    }
+  </style>
 </head>
-<body>
+<body class="bg-[#F7F7F7] font-sans">
 
-<nav class="navbar">
-  <div class="container nav-container">
-    <div class="logo" onclick="location.href='../index.html'">TRAINING<span>CENTER</span></div>
-    <div class="nav-links">
-      <a href="../index.html">Beranda</a>
-      <a href="../index.html#training">Program</a>
-      <a href="../index.html#about">Tentang</a>
-      <a href="../index.html#contact">Kontak</a>
-      <div class="cart-icon" id="cartIcon">
-        <i class="fas fa-shopping-cart"></i>
-        <span class="cart-count" id="cartCount">0</span>
+<!-- Navbar -->
+<nav class="bg-black sticky top-0 z-50 border-b-4 border-[#FFB22C]">
+  <div class="container mx-auto px-4 md:px-8 py-4 flex justify-between items-center flex-wrap gap-4">
+    <div class="text-2xl font-extrabold text-[#FFB22C] cursor-pointer" onclick="location.href='../index.html'">
+      TRAINING<span class="text-[#F7F7F7]">CENTER</span>
+    </div>
+    <div class="flex items-center gap-6 flex-wrap">
+      <a href="../index.html" class="text-[#F7F7F7] hover:text-[#FFB22C] transition font-medium">Beranda</a>
+      <a href="../index.html#training" class="text-[#F7F7F7] hover:text-[#FFB22C] transition font-medium">Program</a>
+      <a href="../index.html#about" class="text-[#F7F7F7] hover:text-[#FFB22C] transition font-medium">Tentang</a>
+      <a href="../index.html#contact" class="text-[#F7F7F7] hover:text-[#FFB22C] transition font-medium">Kontak</a>
+      <div class="cart-icon relative cursor-pointer" id="cartIcon">
+        <i class="fas fa-shopping-cart text-2xl text-[#FFB22C]"></i>
+        <span class="absolute -top-2 -right-3 bg-[#FFB22C] text-black text-xs font-bold rounded-full px-2 py-0.5" id="cartCount">0</span>
       </div>
     </div>
   </div>
 </nav>
 
-<main>
-  <div class="detail-page">
-    <div class="container">
-      <button class="back-button" onclick="location.href='../index.html#training'">
-        <i class="fas fa-arrow-left"></i> Kembali ke Program
-      </button>
+<main class="py-12">
+  <div class="container mx-auto px-4 md:px-8">
+    <!-- Back Button -->
+    <button onclick="location.href='../index.html#training'" class="flex items-center gap-2 text-[#FFB22C] hover:text-[#854836] transition mb-6">
+      <i class="fas fa-arrow-left"></i> Kembali ke Program
+    </button>
+    
+    <!-- Detail Content - Grid Layout 2 Kolom -->
+    <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+      <!-- Left Column: Image & Info -->
+      <div>
+        <img src="https://images.unsplash.com/photo-1504917595217-d4dc5ebe6122?w=800&h=500&fit=crop" alt="Welder 3G" class="w-full rounded-2xl shadow-lg object-cover h-80 lg:h-96">
+        <div class="mt-6 bg-white rounded-2xl p-6 shadow-md">
+          <div class="flex items-center gap-4 flex-wrap mb-4">
+            <span class="bg-[#FFB22C] text-black px-4 py-1 rounded-full text-sm font-semibold">WELDING</span>
+            <span class="bg-gray-100 text-gray-700 px-4 py-1 rounded-full text-sm"><i class="fas fa-certificate mr-1"></i> BNSP</span>
+            <span class="bg-gray-100 text-gray-700 px-4 py-1 rounded-full text-sm"><i class="far fa-calendar-alt mr-1"></i> 5 Hari</span>
+          </div>
+          <div class="text-3xl font-bold text-[#FFB22C] mb-4">Rp 3.500.000</div>
+          <div class="flex gap-4">
+            <button id="addToCartBtn" class="flex-1 bg-black text-white font-bold py-3 rounded-full hover:bg-[#FFB22C] hover:text-black transition">+ Tambah ke Keranjang</button>
+            <button id="buyNowBtn" class="flex-1 bg-[#FFB22C] text-black font-bold py-3 rounded-full hover:bg-[#854836] hover:text-white transition">Beli Sekarang</button>
+          </div>
+        </div>
+      </div>
       
-      <div class="detail-container" data-aos="fade-up">
-        <div class="detail-header">
-          <h1>Welder 3G (SMAW)</h1>
-          <div class="detail-meta">
-            <span><i class="fas fa-tag"></i> WELDING</span>
-            <span><i class="fas fa-certificate"></i> BNSP</span>
-            <span><i class="far fa-calendar-alt"></i> 5 Hari</span>
+      <!-- Right Column: Deskripsi Detail -->
+      <div class="space-y-6">
+        <!-- Header -->
+        <div class="bg-white rounded-2xl p-6 shadow-md">
+          <h1 class="text-3xl md:text-4xl font-bold text-gray-800">Welder 3G (SMAW)</h1>
+          <p class="text-gray-500 mt-2">Sertifikasi pengelasan posisi vertikal dengan metode SMAW</p>
+        </div>
+        
+        <!-- Syarat -->
+        <div class="bg-white rounded-2xl p-6 shadow-md">
+          <h3 class="text-xl font-bold text-[#854836] mb-4 flex items-center gap-2"><i class="fas fa-clipboard-list"></i> Syarat Mengikuti Training</h3>
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-3">
+            <div class="flex items-center gap-2"><i class="fas fa-check-circle text-[#FFB22C]"></i> Fotocopy KTP (3 lembar)</div>
+            <div class="flex items-center gap-2"><i class="fas fa-check-circle text-[#FFB22C]"></i> Fotocopy Ijazah SMA/SMK (3 lembar)</div>
+            <div class="flex items-center gap-2"><i class="fas fa-check-circle text-[#FFB22C]"></i> Pas foto 3x4 (4 lembar)</div>
+            <div class="flex items-center gap-2"><i class="fas fa-check-circle text-[#FFB22C]"></i> Surat keterangan sehat dari dokter</div>
+            <div class="flex items-center gap-2"><i class="fas fa-check-circle text-[#FFB22C]"></i> Menguasai dasar pengelasan</div>
           </div>
         </div>
         
-        <div class="detail-section">
-          <h3><i class="fas fa-clipboard-list"></i> Syarat Mengikuti Training</h3>
-          <ul class="requirement-list">
-            <li>Fotocopy KTP (3 lembar)</li>
-            <li>Fotocopy Ijazah minimal SMA/SMK (3 lembar)</li>
-            <li>Pas foto 3x4 (4 lembar)</li>
-            <li>Surat keterangan sehat dari dokter</li>
-            <li>Menguasai dasar pengelasan</li>
-          </ul>
-        </div>
-        
-        <div class="detail-section">
-          <h3><i class="fas fa-book-open"></i> Materi yang Diajarkan</h3>
-          <ul class="material-list">
-            <li>Teknik pengelasan posisi datar</li>
-            <li>Teknik pengelasan posisi horizontal</li>
-            <li>Teknik pengelasan posisi vertikal (3G)</li>
-            <li>Penggunaan elektroda E7016</li>
-            <li>Keselamatan kerja pengelasan</li>
-            <li>Praktik langsung dengan instruktur bersertifikasi</li>
-          </ul>
-        </div>
-        
-        <div class="detail-section">
-          <h3><i class="fas fa-gift"></i> Fasilitas yang Didapatkan</h3>
-          <ul class="facility-list">
-            <li>Sertifikat BNSP</li>
-            <li>Modul pelatihan</li>
-            <li>Alat las dan APD lengkap</li>
-            <li>Makan siang & coffee break</li>
-            <li>Ruang praktik ber-AC</li>
-            <li>Asuransi kecelakaan</li>
-          </ul>
-        </div>
-        
-        <div class="detail-section">
-          <h3><i class="fas fa-bullseye"></i> Tujuan & Harapan Setelah Training</h3>
-          <ul class="objective-list">
-            <li>Menguasai teknik pengelasan posisi 3G (vertikal)</li>
-            <li>Mendapatkan sertifikasi BNSP yang diakui industri</li>
-            <li>Siap bekerja sebagai welder di proyek konstruksi dan manufaktur</li>
-            <li>Memahami standar keselamatan kerja pengelasan</li>
-            <li>Meningkatkan nilai jual di pasar tenaga kerja</li>
-          </ul>
-        </div>
-        
-        <div class="price-box">
-          <div>
-            <span style="color: var(--gray);">Investasi Training</span>
-            <div class="price">Rp 3.500.000</div>
+        <!-- Materi -->
+        <div class="bg-white rounded-2xl p-6 shadow-md">
+          <h3 class="text-xl font-bold text-[#854836] mb-4 flex items-center gap-2"><i class="fas fa-book-open"></i> Materi yang Diajarkan</h3>
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-3">
+            <div class="flex items-center gap-2"><i class="fas fa-check-circle text-[#FFB22C]"></i> Teknik pengelasan posisi datar</div>
+            <div class="flex items-center gap-2"><i class="fas fa-check-circle text-[#FFB22C]"></i> Teknik pengelasan posisi horizontal</div>
+            <div class="flex items-center gap-2"><i class="fas fa-check-circle text-[#FFB22C]"></i> Teknik pengelasan posisi vertikal (3G)</div>
+            <div class="flex items-center gap-2"><i class="fas fa-check-circle text-[#FFB22C]"></i> Penggunaan elektroda E7016</div>
+            <div class="flex items-center gap-2"><i class="fas fa-check-circle text-[#FFB22C]"></i> Keselamatan kerja pengelasan</div>
+            <div class="flex items-center gap-2"><i class="fas fa-check-circle text-[#FFB22C]"></i> Praktik langsung dengan instruktur</div>
           </div>
-          <div style="display: flex; gap: 15px; flex-wrap: wrap;">
-            <button class="register-btn" id="addToCartBtn">+ Tambah ke Keranjang</button>
-            <button class="register-btn" style="background: var(--black); color: white;" id="buyNowBtn">Beli Sekarang</button>
+        </div>
+        
+        <!-- Fasilitas -->
+        <div class="bg-white rounded-2xl p-6 shadow-md">
+          <h3 class="text-xl font-bold text-[#854836] mb-4 flex items-center gap-2"><i class="fas fa-gift"></i> Fasilitas yang Didapatkan</h3>
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-3">
+            <div class="flex items-center gap-2"><i class="fas fa-check-circle text-[#FFB22C]"></i> Sertifikat BNSP</div>
+            <div class="flex items-center gap-2"><i class="fas fa-check-circle text-[#FFB22C]"></i> Modul pelatihan</div>
+            <div class="flex items-center gap-2"><i class="fas fa-check-circle text-[#FFB22C]"></i> Alat las dan APD lengkap</div>
+            <div class="flex items-center gap-2"><i class="fas fa-check-circle text-[#FFB22C]"></i> Makan siang & coffee break</div>
+            <div class="flex items-center gap-2"><i class="fas fa-check-circle text-[#FFB22C]"></i> Ruang praktik ber-AC</div>
+            <div class="flex items-center gap-2"><i class="fas fa-check-circle text-[#FFB22C]"></i> Asuransi kecelakaan</div>
+          </div>
+        </div>
+        
+        <!-- Tujuan -->
+        <div class="bg-white rounded-2xl p-6 shadow-md">
+          <h3 class="text-xl font-bold text-[#854836] mb-4 flex items-center gap-2"><i class="fas fa-bullseye"></i> Tujuan & Harapan Setelah Training</h3>
+          <div class="grid grid-cols-1 gap-3">
+            <div class="flex items-center gap-2"><i class="fas fa-check-circle text-[#FFB22C]"></i> Menguasai teknik pengelasan posisi 3G (vertikal)</div>
+            <div class="flex items-center gap-2"><i class="fas fa-check-circle text-[#FFB22C]"></i> Mendapatkan sertifikasi BNSP yang diakui industri</div>
+            <div class="flex items-center gap-2"><i class="fas fa-check-circle text-[#FFB22C]"></i> Siap bekerja sebagai welder di proyek konstruksi dan manufaktur</div>
+            <div class="flex items-center gap-2"><i class="fas fa-check-circle text-[#FFB22C]"></i> Memahami standar keselamatan kerja pengelasan</div>
+            <div class="flex items-center gap-2"><i class="fas fa-check-circle text-[#FFB22C]"></i> Meningkatkan nilai jual di pasar tenaga kerja</div>
           </div>
         </div>
       </div>
@@ -105,39 +136,32 @@
   </div>
 </main>
 
-<footer>
-  <div class="container footer-grid">
-    <div><h3>TRAINING CENTER</h3><p>Membangun kompetensi tenaga profesional Indonesia.</p></div>
-    <div><h4>Program Populer</h4><p>Welder 6G</p><p>BOSIET</p><p>Project Management</p><p>Autocad</p></div>
-    <div><h4>Kontak</h4><p>info@trainingcenter.id</p><p>+62 21 1234 5678</p></div>
-  </div>
-  <div class="footer-bottom">
-    <p>&copy; 2025 Training Center - All Rights Reserved</p>
+<footer class="bg-black text-[#F7F7F7] py-12 mt-12">
+  <div class="container mx-auto px-4 md:px-8">
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+      <div><h3 class="text-[#FFB22C] text-xl font-bold mb-3">TRAINING CENTER</h3><p class="text-gray-400">Membangun kompetensi tenaga profesional Indonesia.</p></div>
+      <div><h4 class="font-semibold mb-3">Program Populer</h4><p class="text-gray-400">Welder 6G</p><p class="text-gray-400">BOSIET</p><p class="text-gray-400">Project Management</p></div>
+      <div><h4 class="font-semibold mb-3">Kontak</h4><p class="text-gray-400">info@trainingcenter.id</p><p class="text-gray-400">+62 21 1234 5678</p></div>
+    </div>
+    <div class="border-t border-gray-800 mt-8 pt-6 text-center text-gray-500 text-sm">&copy; 2025 Training Center - All Rights Reserved</div>
   </div>
 </footer>
 
 <!-- Cart Modal -->
 <div id="cartModal" class="cart-modal">
-  <div class="cart-content">
-    <h3>Keranjang Belanja</h3>
+  <div class="bg-white rounded-2xl w-full max-w-md p-6 mx-4 max-h-[80vh] overflow-auto">
+    <h3 class="text-xl font-bold mb-4">Keranjang Belanja</h3>
     <div id="cartItems"></div>
-    <div id="cartTotal" class="cart-total"></div>
-    <button id="checkoutWA" class="checkout-wa"><i class="fab fa-whatsapp"></i> Checkout via WhatsApp</button>
-    <button id="closeCart" class="close-cart">Tutup</button>
+    <div id="cartTotal" class="text-right font-bold text-lg my-4"></div>
+    <button id="checkoutWA" class="w-full bg-green-500 text-white font-bold py-3 rounded-full hover:bg-green-600 transition"><i class="fab fa-whatsapp mr-2"></i> Checkout via WhatsApp</button>
+    <button id="closeCart" class="w-full mt-3 text-gray-500 py-2 hover:text-gray-700 transition">Tutup</button>
   </div>
 </div>
 
-<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
 <script src="../js/main.js"></script>
 <script>
-  AOS.init({ once: true, duration: 800 });
-  
   // Data untuk training ini
-  const trainingData = {
-    id: 1,
-    name: "Welder 3G (SMAW)",
-    price: 3500000
-  };
+  const trainingData = { id: 1, name: "Welder 3G (SMAW)", price: 3500000 };
   
   document.getElementById('addToCartBtn').addEventListener('click', () => {
     addToCart(trainingData.id, trainingData.name, trainingData.price);
